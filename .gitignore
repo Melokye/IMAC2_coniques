@@ -4,3 +4,5 @@ cmake_install.cmake
 Makefile
 conic
 output.html
+.cache/*
+build/*
