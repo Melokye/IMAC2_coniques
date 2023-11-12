@@ -7,21 +7,90 @@
 
 ## 🎯 Objectifs
 
-- Semaine 1 (Deadline : Dimanche 12 novembre) :
-  - [-] Répondre aux questions "simples"
-  - [-] début questions avancées
-  - [-] Réfléchir niveau classe et séparation de code
-- Semaine 2 (Deadline : Dimanche 19 novembre) :
-  - [-] Construction de conique
-  - [-] Exemples :
-    - [-] cercle
-    - [-] ellipse
-    - [-] parabole
-    - [-] hyperbole
-  - [-] fin questions avancées
-- Semaine 3 (Deadline : Mardi 21 novembre) :
-  - [-] Cas de point à l'infini
-  - [-] Cas surdéterminée
+### Semaine 1 (Deadline : Dimanche 12 novembre) :
+- [x] Répondre aux questions "simples"
+- [-] Réfléchir niveau classe et séparation de code
+
+#### Organisation niveau programmation
+
+⚠️**Conique** (= Coupe cone/plan) => ``stocke les informations des coniques``⚠️  ``Tanya``
+- Constructeur (5 points) ⚠️``Tanya``
+- Constructeur (+ 5 points -> "...")
+    -> conique la + proche au sens des moindres carrés
+- _Constructeur(cone, plan) ?_
+- **(Bonus)** Constructeur (5 tangentes)
+- liste de ses coefficients : A, B, C, D, E, F ⚠️ ``Tanya``
+- Type conique ⚠️
+---
+**Fichier**
+- Récupérer les coordonnées depuis un fichier
+---
+**Maths_Eigen** => s'occupe des calculs ⚠️ ``Tanya``
+- Calcule coeff 
+```C++
+Eigen::JacobiSVD < Eigen::MatrixXd > svd (A ,
+Eigen::ComputeThinU | Eigen::ComputeFullV );
+Eigen::VectorXd x = svd.matrixV().rightCols(1);
+``` 
+- Coordonnées Euclidienne <=> Coordonnées homogènes
+---
+⚠️ **View** => s'occupe d'afficher sur géogébra ⚠️ ``Mélodie``
+  - Lien Entry <=> Conique ⚠️ ``Mélodie``
+  - Au lieu d'avoir le processus dans le main ⚠️ ``Mélodie``
+    - Dessiner les points
+    - Dessiner la conique
+    - Dessiner les droites (tangente)
+---
+**(Bonus)** Faisceau
+
+---
+**doctest** (cf. Semaine 2)
+- avec un point à l'infini 
+
+---
+#### Exemple d'utilisation vers géogébra
+**Point**
+```C++
+// draw points
+  Eigen::VectorXd pt1(2), pt2(2);
+  pt1 << 1.5, 2.0;
+  pt2 << -2.0, -1.0;
+  viewer.push_point(pt1, "p1", 200, 0, 0); //avec descriptions
+  viewer.push_point(pt2, 200, 0, 0);
+```
+
+**Ligne**
+```C++
+// draw points
+    viewer.push_line(pt1, pt2 - pt1, 200, 200, 0); //point, direction, couleur * 3
+```
+
+**Conique**
+```C++
+  // draw conic
+  Eigen::VectorXd conic(6);
+  conic << 1.4, -0.3, -1, -0.6, 0.0, 0.8; //coeff  conique - hyperbole
+  viewer.push_conic(conic, 0, 0, 200);
+
+  Eigen::VectorXd conic2(6);
+  conic2 << -1.4, -0.3, -1, -0.6, 0.0, 0.8; //coeff conique - ellipse
+  viewer.push_conic(conic2, 0, 0, 200);
+
+```
+
+### Semaine 2 (Deadline : Dimanche 19 novembre) :
+- [-] questions maths avancées
+- [-] Construction de conique 
+- [-] Exemples :
+  - [-] cercle ($a = c$ et $b = 0$)
+  - [-] ellipse ($b^2 − 4ac < 0$)
+  - [-] parabole ($b^2 − 4ac = 0$)
+  - [-] hyperbole ($b^2 − 4ac > 0$)
+
+### Semaine 3 (Deadline : Mardi 21 novembre) :
+- [-] Réunion Lundi 20 (vers 16h à la fac) : Revoir les questions non terminées
+- [-] Cas de point à l'infini
+- [-] Cas surdéterminée
 
 ## 📚 Guide
 
@@ -57,8 +126,8 @@
 
 # Programmation
 
-- [-] Calculer conique passaant par 5 points (aléatoire ou depuis un fichier)
-- [-] Cas de point à l'infini
+- [-] Calculer conique passant par 5 points (aléatoire ou depuis un fichier)
+- [-] Cas de point à l'infini ( = $(x,y,0)^T$)
 - [-] Extension du code : cas surdéterminée (+ de 5 points)
   - [-] Cas éventuel où aucune conique ne correspond => conique la + proche au sens des moindres carrés
 - [-] Fournir des exemples pour montrer que le code marche (et pour aider à l'utilisation)
