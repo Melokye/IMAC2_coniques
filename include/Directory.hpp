@@ -11,7 +11,6 @@
 /// \author Stephane Breuils, Vincent Nozick
 /// \brief Basic tools to manipulate files and directories.
 
-
 #ifndef GA_DIRECTORY_HPP__
 #define GA_DIRECTORY_HPP__
 
@@ -24,11 +23,11 @@ bool directoryExists(const std::string &dirName);
 
 bool directoryOrFileExists(const std::string &dirName);
 
-bool directoryOrFileExists_ifstream(const std::string& name);
+bool directoryOrFileExists_ifstream(const std::string &name);
 
-std::string readFile(const std::string& fileName);
+std::string readFile(const std::string &fileName);
 
-bool writeFile(const std::string& data, const std::string& fileName);
+bool writeFile(const std::string &data, const std::string &fileName);
 
 void substitute(std::string &data, const std::string &pattern, const std::string &replaceBy);
 
@@ -36,5 +35,4 @@ bool copyBin(const std::string &src, const std::string &dest);
 
 bool copyText(const std::string &src, const std::string &dest);
 
-
-#endif  // GA_DIRECTORY_HPP__
+#endif // GA_DIRECTORY_HPP__

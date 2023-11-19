@@ -5,7 +5,8 @@
 
 #include "Geogebra_conics.hpp"
 
-int main() {
+int main()
+{
   // the viewer will open a file whose path is writen in hard (bad!!).
   // So you should either launch your program from the fine directory or change
   // the path to this file.
@@ -43,9 +44,9 @@ int main() {
   viewer.push_conic(conic2, 100, 0, 200);
 
   // render
-  viewer.display();             // on terminal
+  viewer.display();                    // on terminal
   viewer.render("output/output.html"); // generate the output file (to open with your
-                                // web browser)
+                                       // web browser)
 
   return 0;
 }
