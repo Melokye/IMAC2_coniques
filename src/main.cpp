@@ -5,9 +5,9 @@
 #include <string>
 #include <vector>
 
-#include "../header/Conic.hpp"
-#include "../header/Geogebra_conics.hpp"
-#include "Eigen/src/Core/Matrix.h"
+#include "Conic.hpp"
+#include "Geogebra_conics.hpp"
+// #include "Eigen/src/Core/Matrix.h"
 
 int main()
 {

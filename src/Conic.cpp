@@ -1,5 +1,5 @@
 #include "Conic.hpp"
-#include "Eigen/src/Core/Matrix.h" // TODO :flushed:
+#include <Eigen/Dense>
 #include <cstdarg>
 #include <cstdio>
 #include <iostream>
