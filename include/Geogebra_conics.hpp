@@ -38,22 +38,22 @@ public:
 
     void render(const std::string &filename);
 
-    // \bief setter to enable / disable the option to show axis
+    /// \brief setter to enable / disable the option to show axis
     inline void show_axis(const bool show_axis_on) { m_show_axis = show_axis_on; }
 
-    /// \bief setter to enable / disable the option to show a grid
+    /// \brief setter to enable / disable the option to show a grid
     inline void show_grid(const bool show_grid_on) { m_show_grid = show_grid_on; }
 
-    /// \bief setter to enable / disable the option to show the value of each object
+    /// \brief setter to enable / disable the option to show the value of each object
     inline void show_value(const bool show_value_on) { m_show_value = show_value_on; }
 
-    /// \bief setter to enable / disable the option to show the label of each object
+    /// \brief setter to enable / disable the option to show the label of each object
     inline void show_label(const bool show_label_on) { m_show_label = show_label_on; }
 
-    /// \bief setter to enable / disable the option to show the xOy plane
+    /// \brief setter to enable / disable the option to show the xOy plane
     inline void show_xOy_plane(const bool m_show_xOy_plane_on) { m_show_xOy_plane = m_show_xOy_plane_on; }
 
-    /// \bief setter to enable / disable the option to show an arrow that specifies the line orientation
+    /// \brief setter to enable / disable the option to show an arrow that specifies the line orientation
     inline void set_oriented_line(const bool oriented_line_on) { m_oriented_line = oriented_line_on; }
 
     /// \brief setter to choose the color of the background (default is white)
