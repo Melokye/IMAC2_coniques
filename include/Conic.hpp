@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __CONIC_HPP__
+#define __CONIC_HPP__
+
 #include "Point.hpp"
 
 #include <Eigen/Dense>
@@ -8,19 +10,17 @@ enum Type { cercle, ellipse, parabole, hyperbole };
 
 class Conic {
 private:
-  /* -------------- Membres -------------- */
   Eigen::VectorXd coeff;
-  /* ------------- Fonctions ------------- */
+  
+private:
   void addMatrix(Point p, Eigen::MatrixXd &m);
 
 public:
-  /* -------------- Membres -------------- */
-
-  /* ----- Constructeur/Destructeur ----- */
   Conic(std::vector<Point> points);
   ~Conic();
 
-  /* ------------- Fonctions ------------- */
   Type conicType();
   inline Eigen::VectorXd getCoeff() { return coeff; };
 };
+
+#endif
