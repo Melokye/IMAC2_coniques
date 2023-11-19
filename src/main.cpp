@@ -7,6 +7,7 @@
 
 #include "Conic.hpp"
 #include "Geogebra_conics.hpp"
+#include "Color.hpp"
 
 int main()
 {
@@ -31,12 +32,13 @@ int main()
   viewer.show_value(false);
   viewer.show_label(true);
 
+
   for (unsigned int i = 0; i < p.size(); i++)
   {
     std::string name = "p " + std::to_string(i + 1);
     viewer.push_point(
       (Eigen::VectorXd(3) << p[i].x(), p[i].y(), p[i].w()) 
-.finished(),
+.finished(), // TODO : lambda possible ?
         name, 200, 0, 0);
   }
   
