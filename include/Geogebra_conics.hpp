@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include <list>
 #include <vector>
 #include <iostream>
@@ -13,8 +12,6 @@
 
 #include "Entry.hpp"
 #include "Directory.hpp"
-
-
 
 class Viewer_conic
 {
