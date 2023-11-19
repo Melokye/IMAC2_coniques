@@ -118,27 +118,37 @@ void Viewer_conic::render(const std::string &filename)
     writeFile(data, filename);
 }
 
+template<typename T>
+int Viewer_conic::push(T &data){
+    // TODO à finir
+    // TODO remove space in the name
+    // TODO equation
+    entries.push_back(Entry(T::equation(data), data.name(), 
+        data.color().r(), data.color().g(), data.color().b(),
+        m_show_label, m_show_value));
+    return EXIT_SUCCESS;
+}
+
 // https://wiki.geogebra.org/en/Point_Command
-int Viewer_conic::push_point(
-    const Eigen::VectorXd &pt, std::string objectName,
-    const unsigned int &red, const unsigned int &green, const unsigned int &blue)
-{
+int Viewer_conic::push_point(Point &p // TODO const
+    // const Eigen::VectorXd &pt, std::string objectName,
+    // const unsigned int &red, const unsigned int &green, const unsigned int &blue
+){
     // remove space in the name
+    std::string objectName = p.name();
     objectName.erase(std::remove(objectName.begin(), objectName.end(), ' '), objectName.end());
 
     // final equation
     std::string equation;
 
     equation =
-        " Point({" + std::to_string(pt[0]) + "," + std::to_string(pt[1]) + "})";
-
-    // put a default name
-    if (objectName == "")
-        objectName = "pt";
+        " Point({" + std::to_string(p.x()) + "," + std::to_string(p.y()) + "})";
+        // TODO : cas point à l'infini ?
 
     // push the entry
-    entries.push_back(Entry(equation, objectName, red, green, blue, m_show_label,
-                            m_show_value));
+    entries.push_back(Entry(Point::equation(p), objectName, 
+        p.color().r(), p.color().g(), p.color().b(), 
+        m_show_label, m_show_value));
 
     // finish
     return EXIT_SUCCESS;

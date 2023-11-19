@@ -14,6 +14,9 @@
 #include "Entry.hpp"
 #include "Directory.hpp"
 
+// TODO à effacer ---- 
+#include "Point.hpp"
+
 class Viewer_conic
 {
 public:
@@ -62,12 +65,14 @@ public:
         m_background_color = {R / 255.f, G / 255.f, B / 255.f};
     }
 
-    inline int push_point(const Eigen::VectorXd &pt, const unsigned int &red = -1, const unsigned int &green = -1, const unsigned int &blue = -1)
-    {
-        return push_point(pt, "", red, green, blue);
-    }
+    // TODO à supp
+    // inline int push_point(const Eigen::VectorXd &pt, const unsigned int &red = -1, const unsigned int &green = -1, const unsigned int &blue = -1)
+    // {
+    //     return push_point(pt, "", red, green, blue);
+    // }
 
-    int push_point(const Eigen::VectorXd &pt, std::string objectName = "", const unsigned int &red = -1, const unsigned int &green = -1, const unsigned int &blue = -1);
+    // int push_point(const Eigen::VectorXd &pt, std::string objectName = "", const unsigned int &red = -1, const unsigned int &green = -1, const unsigned int &blue = -1);
+    int push_point(Point &p);
 
     inline int push_line(const Eigen::VectorXd &pt, const Eigen::VectorXd &dir, const unsigned int &red = -1, const unsigned int &green = -1, const unsigned int &blue = -1)
     {
@@ -89,6 +94,9 @@ public:
     }
 
     int push_conic(const Eigen::VectorXd &c, std::string objectName = "", const unsigned int &red = -1, const unsigned int &green = -1, const unsigned int &blue = -1);
+
+    template<typename T>
+    int push(T &data);
 };
 
 #endif

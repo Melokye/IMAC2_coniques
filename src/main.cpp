@@ -19,9 +19,9 @@ int main()
   // std::vector<Point> p = {{3, 5}, {1, 2}, {0, 4}, {6, 6}, {2, 8}};
     // exemple marrant
 
-  std::vector<Point> p = {
+  std::vector<Point> points = {
       {0, -2}, {2, 0}, {sqrt(3) / 2., 1 / 2.}, {-2, 0}, {0, 2}};
-  Conic c = Conic(p);
+  Conic c = Conic(points);
 
   Viewer_conic viewer;
 
@@ -32,16 +32,17 @@ int main()
   viewer.show_value(false);
   viewer.show_label(true);
 
-
-  for (unsigned int i = 0; i < p.size(); i++)
-  {
-    std::string name = "p " + std::to_string(i + 1);
-    viewer.push_point(
-      (Eigen::VectorXd(3) << p[i].x(), p[i].y(), p[i].w()) 
-.finished(), // TODO : lambda possible ?
-        name, 200, 0, 0);
+  for (Point p : points){
+    viewer.push_point( 
+    // viewer.push( // TODO à tester
+      p
+      // Eigen::Vector3d(p.x(), p.y(), p.w()),
+      // // (Eigen::VectorXd(3) << p.x(), p.y(), p.w()) 
+      // // .finished(), // TODO : lambda possible ?
+      // p.name(), p.color().r(), p.color().g(), p.color().b()
+      );
   }
-  
+
   viewer.push_conic(c.coeff(), 100, 0, 200);
 
   // render
