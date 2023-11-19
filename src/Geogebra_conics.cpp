@@ -41,7 +41,7 @@ void Viewer_conic::removeNameDoublons(){
 void Viewer_conic::render(const std::string &filename) {
 
     // open the template file
-    std::string data = readFile("data/geogebra_conics_template.html");
+    std::string data = readFile("../data/geogebra_conics_template.html");
 
     // remove name doublons
     removeNameDoublons();
