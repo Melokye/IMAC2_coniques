@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __GEOGEBRA_CONICS_HPP__
+#include __GEOGEBRA_CONICS_HPP__
 
 #include <list>
 #include <vector>
@@ -89,3 +90,5 @@ public:
 
     int push_conic(const Eigen::VectorXd &c, std::string objectName = "", const unsigned int &red = -1, const unsigned int &green = -1, const unsigned int &blue = -1);
 };
+
+#endif

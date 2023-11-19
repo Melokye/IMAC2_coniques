@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __ENTRY_HPP__
+#define __ENTRY_HPP__
 
 #include <iostream>
 #include <vector>
@@ -38,3 +39,5 @@ public:
 
     void display() const;
 };
+
+#endif
