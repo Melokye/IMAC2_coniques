@@ -16,7 +16,7 @@ public:
     std::string _objectName;
 
     // color (from 0 to 255)
-    std::vector<int> m_color;
+    std::vector<int> m_color; // TODO ?
 
     // show label
     bool m_show_label;

@@ -6,7 +6,7 @@
 
 class Point {
 private:
-  Eigen::RowVectorXd m_matrixEquation = Eigen::RowVectorXd(6);
+  Eigen::RowVectorXd m_matrixEquation = Eigen::RowVectorXd(6); // TODO à revoir ?
   double m_x, m_y, m_w;
 
 public:
