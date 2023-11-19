@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 3.15)
 
-
 # give a name to the project
 project(conic LANGUAGES C CXX)
+
+# include directory
+target_include_directories(conic PRIVATE "include")
 
 # include Eigen
 find_package(Eigen3 REQUIRED)
@@ -16,6 +18,19 @@ else()
     message(STATUS "  include " ${EIGEN3_INCLUDE_DIR})
 endif()
 
+# call the CMakeLists.txt to make the documentation (Doxygen)
+find_package(Doxygen OPTIONAL_COMPONENTS QUIET)
+if(DOXYGEN_FOUND)
+	add_subdirectory(doc)
+else()
+	message(WARNING "Doxygen not found, skip dococumentation")
+endif()
+
+# add a "output" directory in the project binary directory
+file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/output)
+
+# put the binary files in this directory
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 
 # files to compile
 add_executable(conic src/main.cpp src/Geogebra_conics.cpp include/Geogebra_conics.hpp src/Entry.cpp include/Entry.hpp src/Directory.cpp include/Directory.hpp)
@@ -31,10 +46,3 @@ endif()
 # lib include path
 target_include_directories(conic PRIVATE "${EIGEN3_INCLUDE_DIR}")
 
-# call the CMakeLists.txt to make the documentation (Doxygen)
-find_package(Doxygen OPTIONAL_COMPONENTS QUIET)
-if(DOXYGEN_FOUND)
-	add_subdirectory(doc)
-else()
-	message(WARNING "Doxygen not found, skip dococumentation")
-endif()
