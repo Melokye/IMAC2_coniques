@@ -35,14 +35,12 @@ int main()
   {
     std::string name = "p " + std::to_string(i + 1);
     viewer.push_point(
-        (Eigen::VectorXd(3) << p[i].getX(), p[i].getY(), p[i].getW())
-            .finished(),
+      (Eigen::VectorXd(3) << p[i].getX(), p[i].getY(), p[i].getW()) 
+.finished(),
         name, 200, 0, 0);
   }
-
-  Eigen::VectorXd conic(6);
-  conic << c.getCoeff(); // coeff conique - ellipse
-  viewer.push_conic(conic, 100, 0, 200);
+  
+  viewer.push_conic(c.getCoeff(), 100, 0, 200);
 
   // render
   viewer.display();                    // on terminal
