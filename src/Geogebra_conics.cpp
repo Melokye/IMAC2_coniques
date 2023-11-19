@@ -64,7 +64,11 @@ void Viewer_conic::render(const std::string &filename)
     commands += "   api.evalCommand(\"CenterView((0, 0))\");\n";
 
     // https://wiki.geogebra.org/en/SetBackgroundColor_Command
-    commands += "   api.evalCommand(\"SetBackgroundColor(" + std::to_string(m_background_color[0]) + "," + std::to_string(m_background_color[1]) + "," + std::to_string(m_background_color[2]) + ")\");\n";
+    commands += "   api.evalCommand(\"SetBackgroundColor(" 
+                                        + std::to_string(m_background_color[0]) + "," 
+                                        + std::to_string(m_background_color[1]) + "," 
+                                        + std::to_string(m_background_color[2]) 
+                                        + ")\");\n";
 
     // for each entry, extract the command
     for (const auto &e : entries)
@@ -77,7 +81,12 @@ void Viewer_conic::render(const std::string &filename)
 
         // color
         if (e.m_color[0] != -1)
-            commands += "   api.evalCommand(\"SetColor(" + e._objectName + ", " + std::to_string(e.m_color[0] / 255.0) + ", " + std::to_string(e.m_color[1] / 255.0) + ", " + std::to_string(e.m_color[2] / 255.0) + ")\");\n";
+            commands += "   api.evalCommand(\"SetColor(" 
+                                                + e._objectName + ", " 
+                                                + std::to_string(e.m_color[0] / 255.0) + ", " 
+                                                + std::to_string(e.m_color[1] / 255.0) + ", " 
+                                                + std::to_string(e.m_color[2] / 255.0) 
+                                                + ")\");\n";
 
         // show labels and values
         // show value (0=Name, 1=Name + Value, 2=Value)
@@ -110,8 +119,10 @@ void Viewer_conic::render(const std::string &filename)
 }
 
 // https://wiki.geogebra.org/en/Point_Command
-int Viewer_conic::push_point(const Eigen::VectorXd &pt, std::string objectName, const unsigned int &red, const unsigned int &green, const unsigned int &blue)
-{
+int Viewer_conic::push_point(
+    const Eigen::VectorXd &pt,  std::string objectName, 
+    const unsigned int &red, const unsigned int &green,  const unsigned int &blue
+){
     // remove space in the name
     objectName.erase(std::remove(objectName.begin(), objectName.end(), ' '), objectName.end());
 
@@ -132,15 +143,18 @@ int Viewer_conic::push_point(const Eigen::VectorXd &pt, std::string objectName, 
 }
 
 // https://wiki.geogebra.org/en/Line_Command
-int Viewer_conic::push_line(const Eigen::VectorXd &pt, const Eigen::VectorXd &dir, std::string objectName, const unsigned int &red, const unsigned int &green, const unsigned int &blue)
-{
+int Viewer_conic::push_line(
+    const Eigen::VectorXd &pt, const Eigen::VectorXd &dir, std::string objectName, 
+    const unsigned int &red,  const unsigned int &green,  const unsigned int &blue
+){
     // remove space in the name
     objectName.erase(std::remove(objectName.begin(), objectName.end(), ' '), objectName.end());
 
     // final equation
     std::string equation;
 
-    equation = " Line((" + std::to_string(pt[0]) + "," + std::to_string(pt[1]) + "), Vector((" + std::to_string(dir[0]) + "," + std::to_string(dir[1]) + ")))";
+    equation = " Line((" + std::to_string(pt[0]) + "," + std::to_string(pt[1]) 
+        + "), Vector((" + std::to_string(dir[0]) + "," + std::to_string(dir[1]) + ")))";
 
     // put a default name
     if (objectName == "")
