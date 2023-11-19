@@ -1,15 +1,28 @@
+#include <Eigen/Dense>
+#include <cstddef>
 #include <iostream>
+#include <math.h>
+#include <string>
 #include <vector>
 
-#include <Eigen/Dense>
-
-#include "Geogebra_conics.hpp"
+#include "../header/Conic.hpp"
+#include "../header/Geogebra_conics.hpp"
+#include "Eigen/src/Core/Matrix.h"
 
 int main()
 {
   // the viewer will open a file whose path is writen in hard (bad!!).
   // So you should either launch your program from the fine directory or change
   // the path to this file.
+
+  Point p1(2, 4);
+  // std::vector<Point> p = {{3, 5}, {1, 2}, {0, 4}, {6, 6}, {2, 8}}; //exemple
+  // marrant
+
+  std::vector<Point> p = {
+      {0, -2}, {2, 0}, {sqrt(3) / 2., 1 / 2.}, {-2, 0}, {0, 2}};
+  Conic c = Conic(p);
+
   Viewer_conic viewer;
 
   // viewer options
@@ -19,34 +32,24 @@ int main()
   viewer.show_value(false);
   viewer.show_label(true);
 
-  // draw points
-  Eigen::VectorXd pt1(2), pt2(2), pt3(2), pt4(3);
-  pt1 << 1.5, 2.0;
-  pt2 << 3.0, 1.0;
-  pt3 << -2.0, -1.0;
-  pt4 << -4.0, -3.0, 0;
+  for (unsigned int i = 0; i < p.size(); i++) {
+    std::string name = "p " + std::to_string(i + 1);
+    viewer.push_point(
+        (Eigen::VectorXd(3) << p[i].getX(), p[i].getY(), p[i].getW())
+            .finished(),
+        name, 200, 0, 0);
+  }
 
-  viewer.push_point(pt1, "p1", 200, 0, 0);
-  viewer.push_point(pt2, "p2", 200, 0, 0);
-  viewer.push_point(pt3, 200, 0, 0);
-  viewer.push_point(pt4, "p2", 200, 0, 0);
-
-  // draw line
-  viewer.push_line(pt1, pt2 - pt1, 200, 200, 0);
-
-  // draw conic
   Eigen::VectorXd conic(6);
-  conic << 1.4, -0.3, -1, -0.6, 0.0, 0.8; // coeff  conique - hyperbole
-  viewer.push_conic(conic, 0, 100, 200);
-
-  Eigen::VectorXd conic2(6);
-  conic2 << -2.8, -0.6, -2, -1.2, 0.0, 1.6; // coeff conique - ellipse
-  viewer.push_conic(conic2, 100, 0, 200);
+  conic << c.getCoeff(); // coeff conique - ellipse
+  viewer.push_conic(conic, 100, 0, 200);
 
   // render
   viewer.display();                    // on terminal
   viewer.render("output/output.html"); // generate the output file (to open with your
                                        // web browser)
+
+  std::cout << "Type conique : " << c.conicType();
 
   return 0;
 }

@@ -31,7 +31,14 @@ file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/output)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 
 # files to compile
-add_executable(conic src/main.cpp src/Geogebra_conics.cpp include/Geogebra_conics.hpp src/Entry.cpp include/Entry.hpp src/Directory.cpp include/Directory.hpp)
+
+add_executable(conic src/main.cpp 
+    src/Geogebra_conics.cpp include/Geogebra_conics.hpp 
+    src/Entry.cpp include/Entry.hpp 
+    src/Directory.cpp include/Directory.hpp
+    src/Conic.cpp include/Conic.hpp 
+    src/Point.cpp include/Point.hpp
+)
 
 # compilation options
 target_compile_features(conic PRIVATE cxx_std_11) # use at least c++ 11

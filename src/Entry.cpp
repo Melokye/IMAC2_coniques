@@ -9,20 +9,16 @@
 
 #include "Entry.hpp"
 
-Entry::Entry(const std::string &equation,
-             const std::string &objectName,
-             const int &red,
-             const int &green,
-             const int &blue,
-             bool show_label,
-             bool show_value)
-    : m_equation(equation), _objectName(objectName), m_show_label(show_label), m_show_value(show_value)
-{
-    m_color = std::vector<int>(3);
-    m_color[0] = red;
-    m_color[1] = green;
-    m_color[2] = blue;
-}
+Entry::Entry(const std::string &equation, const std::string &objectName, 
+             const int &red, const int &green, const int &blue, 
+             bool show_label, bool show_value)
+   : m_equation(equation), _objectName(objectName), m_show_label(show_label), m_show_value(show_value)
+   {
+      m_color = std::vector<int>(3);
+      m_color[0] = red;
+      m_color[1] = green;
+      m_color[2] = blue;
+   }
 
 void Entry::display() const
 {
