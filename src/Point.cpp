@@ -1,7 +1,6 @@
 
 #include "Point.hpp"
 #include <Eigen/Dense>
-// #include "Eigen/src/Core/Matrix.h"
 #include <iostream>
 
 Point::Point(double x0, double y0, bool fini) {
