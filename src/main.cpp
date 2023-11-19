@@ -44,7 +44,7 @@ int main() {
 
   // render
   viewer.display();             // on terminal
-  viewer.render("output.html"); // generate the output file (to open with your
+  viewer.render("output/output.html"); // generate the output file (to open with your
                                 // web browser)
 
   return 0;
