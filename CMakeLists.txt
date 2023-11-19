@@ -31,4 +31,10 @@ endif()
 # lib include path
 target_include_directories(conic PRIVATE "${EIGEN3_INCLUDE_DIR}")
 
-
+# call the CMakeLists.txt to make the documentation (Doxygen)
+find_package(Doxygen OPTIONAL_COMPONENTS QUIET)
+if(DOXYGEN_FOUND)
+	add_subdirectory(doc)
+else()
+	message(WARNING "Doxygen not found, skip dococumentation")
+endif()
