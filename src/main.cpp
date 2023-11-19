@@ -14,13 +14,16 @@ int main() {
   // So you should either launch your program from the fine directory or change
   // the path to this file.
 
-  Point p1(2, 4);
-  // std::vector<Point> p = {{3, 5}, {1, 2}, {0, 4}, {6, 6}, {2, 8}}; //exemple
-  // marrant
+  std::vector<Point> p = {Point{1, 0},
+                          Point{sqrt(3) / 2., 1 / 2.},
+                          Point{sqrt(2) / 2., sqrt(2) / 2.},
+                          Point{-sqrt(3) / 2., 1 / 2.},
+                          Point{0, 1},
+                          Point{1, 2}};
 
-  std::vector<Point> p = {
-      {0, -2}, {2, 0}, {sqrt(3) / 2., 1 / 2.}, {-2, 0}, {0, 2}};
-  Conic c = Conic(p);
+  Conic c = Conic(Point{1, 0}, Point{sqrt(3) / 2., 1 / 2.},
+                  Point{sqrt(2) / 2., sqrt(2) / 2.},
+                  Point{-sqrt(3) / 2., 1 / 2.}, Point{0, 1}, Point{1, 2});
 
   Viewer_conic viewer;
 

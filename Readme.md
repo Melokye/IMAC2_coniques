@@ -97,11 +97,10 @@
   - [-] cercle ($a = c$ et $b = 0$)
 
     ```C++
-    std::vector<Point> p = {{1, 0},
-                          {sqrt(3) / 2., 1 / 2.},
-                          {sqrt(2) / 2., sqrt(2) / 2.},
-                          {-sqrt(3) / 2., 1 / 2.},
-                          {0, 1}};
+    Conic c = Conic(Point{1, 0}, Point{sqrt(3) / 2., 1 / 2.},
+                  Point{sqrt(2) / 2., sqrt(2) / 2.},
+                  Point{-sqrt(3) / 2., 1 / 2.}, Point{0, 1});
+
     ```
 
   - [-] ellipse ($b^2 − 4ac < 0$)
@@ -117,9 +116,18 @@
     ```
 
   - [x] hyperbole ($b^2 − 4ac > 0$)
-    ```C++
-    std::vector<Point> p = {{3, 5}, {1, 2}, {0, 4}, {3, 3}, {2, 4}};
-    ```
+        `C++
+     Conic c = Conic({3, 5}, Point{1, 2},
+                  Point{0, 4},
+                  Point{3, 3}, Point{2, 4});
+    `
+        exemple marrant
+
+  ```C++
+     Conic c = Conic({3, 5}, Point{1, 2},
+                  Point{0, 4},
+                  Point{6, 6}, Point{2, 8});
+  ```
 
 ### Semaine 3 (Deadline : Mardi 21 novembre) :
 
@@ -175,11 +183,11 @@ Voici ce qu’il serait bon de rencontrer dans votre projet :
 
 - [-] polymorphisme
 - [-] usage d’outils de la STL
-- [-] exceptions pour traiter les erreurs
+- [x] exceptions pour traiter les erreurs
 - [-] asserts pour détecter et prévenir les erreurs de programmation
 - [-] espaces de nommage (namespace)
 - [-] fonctions lambdas constexpr
-- [-] (bonus) fonctions variadics
+- [x] (bonus) fonctions variadics
 
 ## ⚠️ Attention ⚠️
 

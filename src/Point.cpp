@@ -3,7 +3,7 @@
 #include "Eigen/src/Core/Matrix.h"
 #include <iostream>
 
-Point::Point(double x0, double y0, bool fini) {
+Point::Point(const double &x0, const double &y0, const bool &fini) {
   x = x0;
   y = y0;
   w = fini;
@@ -11,4 +11,4 @@ Point::Point(double x0, double y0, bool fini) {
   matrixEquation << pow(x, 2), x * y, pow(y, 2), x * w, y * w, w * w;
 }
 
-Point::~Point() {}
+Point::~Point(){};
