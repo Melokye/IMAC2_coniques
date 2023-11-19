@@ -6,3 +6,4 @@ conic
 output.html
 .cache/*
 build/*
+.vscode/*

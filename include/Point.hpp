@@ -5,7 +5,6 @@
 
 class Point {
 private:
-  /* ------------- Membres ------------- */
   Eigen::RowVectorXd matrixEquation = Eigen::RowVectorXd(6);
   double x, y, w;
 

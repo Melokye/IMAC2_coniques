@@ -46,11 +46,11 @@ int main() {
   viewer.push_conic(conic, 100, 0, 200);
 
   // render
-  viewer.display();             // on terminal
-  viewer.render("output.html"); // generate the output file (to open with your
-                                // web browser)
+  viewer.display();                    // on terminal
+  viewer.render("output/output.html"); // generate the output file (to open with
+                                       // your web browser)
 
-  std::cout << "Type conique : " << c.conicType();
+  std::cout << "Type conique : " << c.conicType() << std::endl;
 
   return 0;
 }

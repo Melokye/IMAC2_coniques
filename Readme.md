@@ -10,7 +10,7 @@
 ### Semaine 1 (Deadline : Dimanche 12 novembre) :
 
 - [x] Répondre aux questions "simples"
-- [-] Réfléchir niveau classe et séparation de code
+- [x] Réfléchir niveau classe et séparation de code
 
 #### Organisation niveau programmation
 

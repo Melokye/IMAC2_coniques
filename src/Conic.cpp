@@ -1,5 +1,5 @@
 #include "Conic.hpp"
-#include "Eigen/src/Core/Matrix.h"
+#include <Eigen/Dense>
 #include <cstdarg>
 #include <cstdio>
 #include <stdexcept>
