@@ -5,9 +5,8 @@
 #include <string>
 #include <vector>
 
-#include "../header/Conic.hpp"
-#include "../header/Geogebra_conics.hpp"
-#include "Eigen/src/Core/Matrix.h"
+#include "Conic.hpp"
+#include "Geogebra_conics.hpp"
 
 int main() {
   // the viewer will open a file whose path is writen in hard (bad!!).

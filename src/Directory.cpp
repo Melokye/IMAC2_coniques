@@ -7,7 +7,7 @@
 // Licence MIT
 // A a copy of the MIT License is given along with this program
 
-#include "../header/Directory.hpp"
+#include "Directory.hpp"
 
 #include <cstdlib>
 #include <fstream>

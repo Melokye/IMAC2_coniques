@@ -1,5 +1,5 @@
 
-#include "../header/Point.hpp"
+#include "Point.hpp"
 #include "Eigen/src/Core/Matrix.h"
 #include <iostream>
 

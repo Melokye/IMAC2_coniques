@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "../header/Entry.hpp"
-#include "../header/Geogebra_conics.hpp"
+#include "Entry.hpp"
+#include "Geogebra_conics.hpp"
 
 Viewer_conic::Viewer_conic() {}
 

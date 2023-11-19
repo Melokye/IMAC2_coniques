@@ -7,7 +7,7 @@
 // Licence MIT
 // A a copy of the MIT License is given along with this program
 
-#include "../header/Entry.hpp"
+#include "Entry.hpp"
 
 Entry::Entry(const std::string &equation, const std::string &objectName,
              const int &red, const int &green, const int &blue, bool show_label,

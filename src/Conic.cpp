@@ -1,4 +1,4 @@
-#include "../header/Conic.hpp"
+#include "Conic.hpp"
 #include "Eigen/src/Core/Matrix.h"
 #include <cstdarg>
 #include <cstdio>

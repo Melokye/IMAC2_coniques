@@ -16,9 +16,8 @@
 
 ⚠️**Conique** (= Coupe cone/plan) => `stocke les informations des coniques`⚠️ `Tanya`
 
-- [x] Constructeur (5 points) ⚠️`Tanya`
-- [-] Constructeur (+ 5 points -> "...")
-  -> conique la + proche au sens des moindres carrés
+- [x] Constructeur (+ 5 points -> "...") ⚠️`Tanya`
+      -> conique la + proche au sens des moindres carrés
 - [-] _Constructeur(cone, plan) ?_
 - [-] **(Bonus)** Constructeur (5 tangentes)
 - [x] liste de ses coefficients : A, B, C, D, E, F ⚠️
@@ -117,10 +116,10 @@
 
   - [x] hyperbole ($b^2 − 4ac > 0$)
         `C++
-     Conic c = Conic({3, 5}, Point{1, 2},
-                  Point{0, 4},
-                  Point{3, 3}, Point{2, 4});
-    `
+ Conic c = Conic({3, 5}, Point{1, 2},
+              Point{0, 4},
+              Point{3, 3}, Point{2, 4});
+`
         exemple marrant
 
   ```C++
