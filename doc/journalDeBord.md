@@ -19,3 +19,7 @@ Maths Eigen |   X   |
 View        |       |    X
 
 Ces implémentations se feront indépendament par l'intermédiaire de branches git
+
+## 19/11
+
+### Réorganisation des fichiers
