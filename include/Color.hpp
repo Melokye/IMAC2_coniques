@@ -9,7 +9,11 @@ public:
     Color(const unsigned int &r, const unsigned int &g, const unsigned int &b)
     : m_r(r), m_g(g), m_b(b) {}
 
-    ~Color();
+    ~Color(){};
+
+    inline unsigned int r(){return m_r;}
+    inline unsigned int g(){return m_g;}
+    inline unsigned int b(){return m_b;}
 };
 
 
