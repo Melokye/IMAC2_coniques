@@ -40,7 +40,7 @@ int main()
         name, 200, 0, 0);
   }
   
-  viewer.push_conic(c.getCoeff(), 100, 0, 200);
+  viewer.push_conic(c.coeff(), 100, 0, 200);
 
   // render
   viewer.display();                    // on terminal
