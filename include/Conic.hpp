@@ -10,17 +10,17 @@ enum Type { cercle, ellipse, parabole, hyperbole };
 
 class Conic {
 private:
-  Eigen::VectorXd coeff;
+  Eigen::VectorXd m_coeff;
   
 private:
-  void addMatrix(Point p, Eigen::MatrixXd &m);
+  void addMatrix(Point p, Eigen::MatrixXd &m); // TODO p -> const Point &p
 
 public:
-  Conic(std::vector<Point> points);
+  Conic(const std::vector<Point> &points);
   ~Conic();
 
   Type conicType();
-  inline Eigen::VectorXd getCoeff() { return coeff; };
+  inline Eigen::VectorXd coeff() { return m_coeff; };
 };
 
 #endif
