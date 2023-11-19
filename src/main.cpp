@@ -35,7 +35,7 @@ int main()
   {
     std::string name = "p " + std::to_string(i + 1);
     viewer.push_point(
-      (Eigen::VectorXd(3) << p[i].getX(), p[i].getY(), p[i].getW()) 
+      (Eigen::VectorXd(3) << p[i].x(), p[i].y(), p[i].w()) 
 .finished(),
         name, 200, 0, 0);
   }

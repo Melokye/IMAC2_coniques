@@ -10,13 +10,14 @@ private:
   double m_x, m_y, m_w;
 
 public:
-  Point(double x0 = 0, double y0 = 0, bool fini = 1);
+  Point(const double x = 0, const double y0 = 0, const bool fini = 1);
+    // TODO nécéssaire de définir x,y = 0 ?
   ~Point();
 
-  inline double getX() { return m_x; }
-  inline double getY() { return m_y; }
-  inline double getW() { return m_w; }
-  inline Eigen::RowVectorXd getMatrixEquation() { return m_matrixEquation; };
+  inline double x() { return m_x; }
+  inline double y() { return m_y; }
+  inline double w() { return m_w; }
+  inline Eigen::RowVectorXd matrixEquation() { return m_matrixEquation; };
 };
 
 #endif

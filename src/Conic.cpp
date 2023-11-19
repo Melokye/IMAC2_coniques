@@ -30,5 +30,5 @@ Type Conic::conicType() {
 
 void Conic::addMatrix(Point p, Eigen::MatrixXd &m) {
   m.conservativeResize(m.rows() + 1, m.cols());
-  m.row(m.rows() - 1) = p.getMatrixEquation();
+  m.row(m.rows() - 1) = p.matrixEquation();
 }
