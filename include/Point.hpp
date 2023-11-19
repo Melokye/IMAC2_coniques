@@ -10,7 +10,7 @@ private:
   double m_x, m_y, m_w;
 
 public:
-  Point(const double x = 0, const double y0 = 0, const bool fini = 1);
+  Point(const double x = 0, const double y = 0, const bool fini = 1);
     // TODO nécéssaire de définir x,y = 0 ?
   ~Point();
 
