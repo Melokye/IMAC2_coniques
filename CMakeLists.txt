@@ -3,9 +3,6 @@ cmake_minimum_required(VERSION 3.15)
 # give a name to the project
 project(conic LANGUAGES C CXX)
 
-# include directory
-target_include_directories(conic PRIVATE "include")
-
 # include Eigen
 find_package(Eigen3 REQUIRED)
 if(${EIGEN3_FOUND})
@@ -47,3 +44,5 @@ endif()
 # lib include path
 target_include_directories(conic PRIVATE "${EIGEN3_INCLUDE_DIR}")
 
+# include directory
+target_include_directories(conic PRIVATE "include")
