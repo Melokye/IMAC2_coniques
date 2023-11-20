@@ -23,3 +23,5 @@ Ces implémentations se feront indépendament par l'intermédiaire de branches g
 ## 19/11
 
 ### Réorganisation des fichiers
+
+### Application des normes pour le nommage des attributs
