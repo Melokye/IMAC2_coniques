@@ -30,7 +30,7 @@ Type Conic::conicType()
                     : Type::hyperbole;
 }
 
-void Conic::addMatrix(Point p, Eigen::MatrixXd &m)
+void Conic::addMatrix(const Point &p, Eigen::MatrixXd &m)
 {
   m.conservativeResize(m.rows() + 1, m.cols());
   m.row(m.rows() - 1) = p.matrixEquation();

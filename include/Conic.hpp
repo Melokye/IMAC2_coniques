@@ -13,7 +13,7 @@ private:
   Eigen::VectorXd m_coeff;
   
 private:
-  void addMatrix(Point p, Eigen::MatrixXd &m); // TODO p -> const Point &p
+  void addMatrix(const Point &p, Eigen::MatrixXd &m);
 
 public:
   Conic(const std::vector<Point> &points);
