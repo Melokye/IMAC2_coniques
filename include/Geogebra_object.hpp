@@ -11,7 +11,10 @@ protected:
 
 public:
     Geogebra_object(std::string name, Color color)
-    : m_name(name), m_color(color){}
+    : m_color(color){
+        // remove space in the name
+        m_name = name.erase(std::remove(name.begin(), name.end(), ' '), name.end());
+    }
 
     ~Geogebra_object(){}
 

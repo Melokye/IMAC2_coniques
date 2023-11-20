@@ -131,11 +131,6 @@ int Viewer_conic::push(T &data){
 
 // https://wiki.geogebra.org/en/Point_Command
 int Viewer_conic::push_point(const Geogebra_object &p){
-    // remove space in the name // TODO à supp
-    std::string objectName = p.name();
-    objectName.erase(std::remove(objectName.begin(), objectName.end(), ' '), objectName.end());
-
-
     // push the entry
     entries.push_back(Entry(p.equation(), objectName, 
         p.color().r(), p.color().g(), p.color().b(), 
