@@ -134,19 +134,13 @@ int Viewer_conic::push_point(Point &p // TODO const
     // const Eigen::VectorXd &pt, std::string objectName,
     // const unsigned int &red, const unsigned int &green, const unsigned int &blue
 ){
-    // remove space in the name
+    // remove space in the name // TODO à supp
     std::string objectName = p.name();
     objectName.erase(std::remove(objectName.begin(), objectName.end(), ' '), objectName.end());
 
-    // final equation
-    std::string equation;
-
-    equation =
-        " Point({" + std::to_string(p.x()) + "," + std::to_string(p.y()) + "})";
-        // TODO : cas point à l'infini ?
 
     // push the entry
-    entries.push_back(Entry(Point::equation(p), objectName, 
+    entries.push_back(Entry(p.equation(), objectName, 
         p.color().r(), p.color().g(), p.color().b(), 
         m_show_label, m_show_value));
 
