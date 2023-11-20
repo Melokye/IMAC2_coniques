@@ -15,10 +15,10 @@ public:
     // TODO nécéssaire de définir x,y = 0 ?
   ~Point();
 
-  inline Eigen::RowVectorXd matrixEquation() { return m_matrixEquation;};
-  inline double x() { return m_x; }
-  inline double y() { return m_y; }
-  inline double w() { return m_w; }
+  inline Eigen::RowVectorXd matrixEquation() const { return m_matrixEquation;};
+  inline double x() const { return m_x; }
+  inline double y() const { return m_y; }
+  inline double w() const { return m_w; }
 
   std::string equation() const override;
 };

@@ -20,7 +20,7 @@ public:
   ~Conic();
 
   Type conicType();
-  inline Eigen::VectorXd coeff() { return m_coeff; };
+  inline Eigen::VectorXd coeff() const { return m_coeff; };
   std::string equation() const override;
 };
 
