@@ -18,8 +18,6 @@
 
 - [x] Constructeur (+ 5 points -> "...") ⚠️`Tanya`
       -> conique la + proche au sens des moindres carrés
-- [-] _Constructeur(cone, plan) ?_
-- [-] **(Bonus)** Constructeur (5 tangentes)
 - [x] liste de ses coefficients : A, B, C, D, E, F ⚠️
       `Tanya`
   - [x] Calcule coeff
@@ -27,19 +25,25 @@
 
 ---
 
-**Fichier**
+⚠️ **View** => s'occupe d'afficher sur géogébra ⚠️ `Mélodie`
 
-- Récupérer les coordonnées depuis un fichier
+- [-] Lien Entry <=> Conique ⚠️ `Mélodie`
+- [-] Au lieu d'avoir le processus dans le main ⚠️ `Mélodie`
+  - [-] Dessiner les points
+  - [-] Dessiner la conique
+  - [-] Dessiner les droites (tangente)
+
+### Semaine 2 (Deadline : Mercredi 15 novembre) :
+
+⚠️**Conique**
+
+- [-] **(Bonus)** Constructeur (5 tangentes)
 
 ---
 
-⚠️ **View** => s'occupe d'afficher sur géogébra ⚠️ `Mélodie`
+**Fichier**
 
-- Lien Entry <=> Conique ⚠️ `Mélodie`
-- Au lieu d'avoir le processus dans le main ⚠️ `Mélodie`
-  - Dessiner les points
-  - Dessiner la conique
-  - Dessiner les droites (tangente)
+- Récupérer les coordonnées depuis un fichier
 
 ---
 
@@ -50,6 +54,13 @@
 **doctest** (cf. Semaine 2)
 
 - avec un point à l'infini
+
+---
+
+- Affichez des coniques du faisceau C(t) et vérifiez que ces coniques passent toutes par les points d’intersection entre Ca et Cb.  
+   $C(t) = cos(t)C_a + sin(t)C_b$ avec t ∈ [0, π]  
+   faisceau == combinaison linéaire de 2 coniques  
+   /!\ Pensez à normer les coniques Ca et Cb en divisant chacune de leur composante par leur norme respective : $‖C‖ = \sqrt{(a² + b² + c² + d² + e² + f²)}$
 
 ---
 

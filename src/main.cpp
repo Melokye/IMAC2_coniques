@@ -13,16 +13,17 @@ int main() {
   // So you should either launch your program from the fine directory or change
   // the path to this file.
 
-  std::vector<Point> p = {Point{1, 0},
-                          Point{sqrt(3) / 2., 1 / 2.},
-                          Point{sqrt(2) / 2., sqrt(2) / 2.},
-                          Point{-sqrt(3) / 2., 1 / 2.},
-                          Point{0, 1},
-                          Point{1, 2}};
+  std::vector<Point> p = {Point{1, 2}, Point{2., 2}, Point{3., 2}, Point{4, 1.},
+                          Point{5., 1.}};
 
-  Conic c = Conic(Point{1, 0}, Point{sqrt(3) / 2., 1 / 2.},
-                  Point{sqrt(2) / 2., sqrt(2) / 2.},
-                  Point{-sqrt(3) / 2., 1 / 2.}, Point{0, 1}, Point{1, 2});
+  /*
+    Conic c = Conic(Point{1, 0}, Point{sqrt(3) / 2., 1 / 2.},
+                    Point{sqrt(2) / 2., sqrt(2) / 2.},
+                    Point{-sqrt(3) / 2., 1 / 2.}, Point{0, 1}, Point{1, 2});
+  */
+
+  Conic c = Conic(Point{1, 2}, Point{2., 2}, Point{3., 2}, Point{4, 1.},
+                  Point{5., 1.});
 
   Viewer_conic viewer;
 
@@ -45,12 +46,16 @@ int main() {
   conic << c.getCoeff(); // coeff conique - ellipse
   viewer.push_conic(conic, 100, 0, 200);
 
+  Eigen::VectorXd conic2(6);
+  conic2 << 10, 2, 5, 0, 40, 0; // coeff conique - ellipse
+  viewer.push_conic(conic2, 100, 0, 200);
+
   // render
   viewer.display();                    // on terminal
   viewer.render("output/output.html"); // generate the output file (to open with
                                        // your web browser)
 
-  std::cout << "Type conique : " << c.conicType() << std::endl;
+  // std::cout << "Type conique : " << c.conicType() << std::endl;
 
   return 0;
 }
