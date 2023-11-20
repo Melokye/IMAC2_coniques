@@ -15,8 +15,8 @@ public:
 
     ~Geogebra_object(){}
 
-    inline std::string name(){return this->m_name;}
-    inline Color color(){return this->m_color;}
+    inline std::string name() const {return this->m_name;}
+    inline Color color() const {return this->m_color;}
     virtual std::string equation() const;
 };
 

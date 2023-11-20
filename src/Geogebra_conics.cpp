@@ -130,10 +130,7 @@ int Viewer_conic::push(T &data){
 }
 
 // https://wiki.geogebra.org/en/Point_Command
-int Viewer_conic::push_point(Point &p // TODO const
-    // const Eigen::VectorXd &pt, std::string objectName,
-    // const unsigned int &red, const unsigned int &green, const unsigned int &blue
-){
+int Viewer_conic::push_point(const Geogebra_object &p){
     // remove space in the name // TODO à supp
     std::string objectName = p.name();
     objectName.erase(std::remove(objectName.begin(), objectName.end(), ' '), objectName.end());

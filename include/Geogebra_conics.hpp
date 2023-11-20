@@ -72,7 +72,7 @@ public:
     // }
 
     // int push_point(const Eigen::VectorXd &pt, std::string objectName = "", const unsigned int &red = -1, const unsigned int &green = -1, const unsigned int &blue = -1);
-    int push_point(Point &p);
+    int push_point(const Geogebra_object &p);
 
     inline int push_line(const Eigen::VectorXd &pt, const Eigen::VectorXd &dir, const unsigned int &red = -1, const unsigned int &green = -1, const unsigned int &blue = -1)
     {

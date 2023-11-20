@@ -11,9 +11,9 @@ public:
 
     ~Color(){};
 
-    inline unsigned int r(){return m_r;}
-    inline unsigned int g(){return m_g;}
-    inline unsigned int b(){return m_b;}
+    inline unsigned int r() const {return m_r;}
+    inline unsigned int g() const {return m_g;}
+    inline unsigned int b() const {return m_b;}
 };
 
 
