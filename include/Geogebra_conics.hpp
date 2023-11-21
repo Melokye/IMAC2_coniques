@@ -79,13 +79,6 @@ public:
 
     int push_direction(const Eigen::VectorXd &direction, std::string objectName = "", const unsigned int &red = -1, const unsigned int &green = -1, const unsigned int &blue = -1);
 
-    inline int push_conic(const Eigen::VectorXd &c, const unsigned int &red = -1, const unsigned int &green = -1, const unsigned int &blue = -1)
-    {
-        return push_conic(c, "", red, green, blue);
-    }
-
-    int push_conic(const Eigen::VectorXd &c, std::string objectName = "", const unsigned int &red = -1, const unsigned int &green = -1, const unsigned int &blue = -1);
-
     int push(const Geogebra_object &data);
 };
 

@@ -134,7 +134,7 @@ int Viewer_conic::push_line(
     const Eigen::VectorXd &pt, const Eigen::VectorXd &dir, std::string objectName,
     const unsigned int &red, const unsigned int &green, const unsigned int &blue)
 {
-    // remove space in the name
+    // remove space in the name // TODO à eff
     objectName.erase(std::remove(objectName.begin(), objectName.end(), ' '), objectName.end());
 
     // final equation
@@ -159,7 +159,7 @@ int Viewer_conic::push_line(
 int Viewer_conic::push_direction(const Eigen::VectorXd &direction, std::string objectName,
     const unsigned int &red, const unsigned int &green, const unsigned int &blue)
 {
-    // remove space in the name
+    // remove space in the name // TODO à eff
     objectName.erase(std::remove(objectName.begin(), objectName.end(), ' '),
                      objectName.end());
 
@@ -181,32 +181,4 @@ int Viewer_conic::push_direction(const Eigen::VectorXd &direction, std::string o
     return EXIT_SUCCESS;
 }
 
-// https://wiki.geogebra.org/en/Conic_Command
-int Viewer_conic::push_conic(const Eigen::VectorXd &c, std::string objectName,
-    const unsigned int &red, const unsigned int &green, const unsigned int &blue)
-{
-    // remove space in the name
-    objectName.erase(std::remove(objectName.begin(), objectName.end(), ' '), objectName.end());
-
-    // final equation
-    std::string equation;
-
-    equation = " Conic(" + std::to_string(c[0]) + "," // x^2
-               + std::to_string(c[2]) + ","           // y^2
-               + std::to_string(c[5]) + ","           // g
-               + std::to_string(c[1]) + ","           // xy
-               + std::to_string(c[3]) + ","           // x
-               + std::to_string(c[4])                 // y
-               + ")";
-
-    // put a default name
-    if (objectName == "")
-        objectName = "c";
-
-    // push the entry
-    entries.push_back(Entry(equation, objectName, red, green, blue,
-                            m_show_label, m_show_value));
-
-    // finish
-    return EXIT_SUCCESS;
-}
+// https://wiki.geogebra.org/en/Conic_Command // TODO à déplacer

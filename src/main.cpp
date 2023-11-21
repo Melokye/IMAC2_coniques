@@ -36,7 +36,7 @@ int main()
     viewer.push(p);
   }
 
-  viewer.push_conic(c.coeff(), 100, 0, 200); // TODO 
+  viewer.push(c); // TODO 
 
   // render
   viewer.display();                    // on terminal
