@@ -86,8 +86,7 @@ public:
 
     int push_conic(const Eigen::VectorXd &c, std::string objectName = "", const unsigned int &red = -1, const unsigned int &green = -1, const unsigned int &blue = -1);
 
-    template<typename T> // TODO à finir mais héritage au lieu de template
-    int push(T &data);
+    int push(const Geogebra_object &data);
 };
 
 #endif

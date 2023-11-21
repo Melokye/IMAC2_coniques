@@ -118,19 +118,8 @@ void Viewer_conic::render(const std::string &filename)
     writeFile(data, filename);
 }
 
-template<typename T>
-int Viewer_conic::push(T &data){
-    // TODO à finir
-    // TODO remove space in the name
-    // TODO equation
-    entries.push_back(Entry(T::equation(data), data.name(), 
-        data.color().r(), data.color().g(), data.color().b(),
-        m_show_label, m_show_value));
-    return EXIT_SUCCESS;
-}
-
 // https://wiki.geogebra.org/en/Point_Command
-int Viewer_conic::push_point(const Geogebra_object &p){
+int Viewer_conic::push(const Geogebra_object &p){
     // push the entry
     entries.push_back(Entry(p.equation(), p.name(), 
         p.color().r(), p.color().g(), p.color().b(), 

@@ -32,18 +32,11 @@ int main()
   viewer.show_value(false);
   viewer.show_label(true);
 
-  for (Point p : points){
-    viewer.push_point( 
-    // viewer.push( // TODO à tester
-      p
-      // Eigen::Vector3d(p.x(), p.y(), p.w()),
-      // // (Eigen::VectorXd(3) << p.x(), p.y(), p.w()) 
-      // // .finished(), // TODO : lambda possible ?
-      // p.name(), p.color().r(), p.color().g(), p.color().b()
-      );
+  for (Point p : points){ // TODO surcharge ?
+    viewer.push(p);
   }
 
-  viewer.push_conic(c.coeff(), 100, 0, 200);
+  viewer.push_conic(c.coeff(), 100, 0, 200); // TODO 
 
   // render
   viewer.display();                    // on terminal
