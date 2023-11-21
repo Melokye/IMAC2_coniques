@@ -132,7 +132,7 @@ int Viewer_conic::push(T &data){
 // https://wiki.geogebra.org/en/Point_Command
 int Viewer_conic::push_point(const Geogebra_object &p){
     // push the entry
-    entries.push_back(Entry(p.equation(), objectName, 
+    entries.push_back(Entry(p.equation(), p.name(), 
         p.color().r(), p.color().g(), p.color().b(), 
         m_show_label, m_show_value));
 
