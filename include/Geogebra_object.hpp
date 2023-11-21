@@ -10,12 +10,8 @@ protected:
     Color m_color;
 
 public:
-    Geogebra_object(std::string name, Color color) // TODO default
-    : m_name(name), m_color(color){
-        // remove space in the name
-        m_name.erase(std::remove(m_name.begin(), m_name.end(), ' '), m_name.end()); 
-    }
-
+    Geogebra_object(const std::string &name, const Color &color); // TODO = default;
+    
     ~Geogebra_object(){}
 
     inline std::string name() const {return this->m_name;}

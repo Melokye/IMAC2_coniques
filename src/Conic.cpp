@@ -4,8 +4,9 @@
 #include <cstdio>
 #include <iostream>
 
+static unsigned int m_cpt = 0; // TODO dans le constructeur
 Conic::Conic(const std::vector<Point> &points)
-: Geogebra_object("c", Color(100, 0, 200))
+: Geogebra_object("c" + std::to_string(m_cpt++), Color(100, 0, 200)) // TODO pb 
 {
   assert(points.size() >= 5);
 
