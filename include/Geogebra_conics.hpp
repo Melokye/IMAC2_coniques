@@ -36,7 +36,7 @@ public:
 
   void display() const;
 
-  void removeNameDoublons();
+  void remove_name_doublons();
 
   void render(const std::string &filename);
 

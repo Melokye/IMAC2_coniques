@@ -6,7 +6,7 @@
 
 Conic::~Conic() {}
 
-Type Conic::conicType() const {
+Type Conic::conic_type() const {
 
   if ((*m_rep)[0] == (*m_rep)[2] && (*m_rep)[1] == 0)
     return Type::cercle;
@@ -16,4 +16,7 @@ Type Conic::conicType() const {
                     : Type::hyperbole;
 }
 
-void Conic::push(Viewer_conic &v) const { v.push_conic((*m_rep), 255, 0, 100); }
+void Conic::push(Viewer_conic &v) const {
+  std::cout << "push conic type " << conic_type() << " ...\n";
+  v.push_conic((*m_rep), 255, 0, 100);
+}

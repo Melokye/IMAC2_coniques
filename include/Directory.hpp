@@ -17,22 +17,23 @@
 #include <string>
 #include <vector>
 
-void makeDirectory(const std::string &dirName);
+void make_directory(const std::string &dirName);
 
-bool directoryExists(const std::string &dirName);
+bool directory_exists(const std::string &dirName);
 
-bool directoryOrFileExists(const std::string &dirName);
+bool directory_or_file_exists(const std::string &dirName);
 
-bool directoryOrFileExists_ifstream(const std::string &name);
+bool directory_or_file_exists_ifstream(const std::string &name);
 
-std::string readFile(const std::string &fileName);
+std::string read_file(const std::string &fileName);
 
-bool writeFile(const std::string &data, const std::string &fileName);
+bool write_file(const std::string &data, const std::string &fileName);
 
-void substitute(std::string &data, const std::string &pattern, const std::string &replaceBy);
+void substitute(std::string &data, const std::string &pattern,
+                const std::string &replaceBy);
 
-bool copyBin(const std::string &src, const std::string &dest);
+bool copy_bin(const std::string &src, const std::string &dest);
 
-bool copyText(const std::string &src, const std::string &dest);
+bool copy_text(const std::string &src, const std::string &dest);
 
 #endif // GA_DIRECTORY_HPP__
