@@ -1,4 +1,5 @@
 #pragma once
+#include "Beam.hpp"
 #include "Point.hpp"
 
 #include <Eigen/Dense>
@@ -10,6 +11,8 @@
 enum Type { cercle, ellipse, parabole, hyperbole };
 
 class Conic : public Geogebra_object {
+
+  friend Beam;
 
 private:
   template <class Arg>
@@ -25,9 +28,10 @@ private:
     add_matrix(m, args...);
   }
 
-public:
-  Conic(const Conic &c) : Geogebra_object(6) { *(m_rep) = *(c.m_rep); };
+protected:
+  void set_rep(double a, double b, double c, double d, double e, double f);
 
+public:
   template <class... Args> Conic(const Args... args) : Geogebra_object(6) {
     int num_points = sizeof...(args);
     if (num_points < 5)
@@ -39,8 +43,11 @@ public:
                                                  Eigen::ComputeFullV);
     *(m_rep) = svd.matrixV().rightCols(1);
   }
+
+  Conic(const Conic &c);
   ~Conic();
 
   Type conic_type() const;
   void push(Viewer_conic &v) const override;
+  void beam(Conic c) const;
 };

@@ -8,9 +8,8 @@ Viewer::Viewer(const std::vector<Geogebra_object *> &geo_obj) {
   m_viewer.show_label(true);
 
   /* ------------ ajout ------------ */
-
-  for (unsigned int i = 0; i < geo_obj.size(); i++)
-    geo_obj[i]->push(m_viewer);
+  std::for_each(geo_obj.begin(), geo_obj.end(),
+                [this](auto obj) { obj->push(m_viewer); });
 
   std::cout << "AFFICHAGE..." << std::endl;
   m_viewer.display(); // on terminal

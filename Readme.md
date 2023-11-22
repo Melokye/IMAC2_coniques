@@ -179,20 +179,20 @@
 
 # Programmation
 
-- [-] Calculer conique passant par 5 points (aléatoire ou depuis un fichier)
+- [x] Calculer conique passant par 5 points (aléatoire ou depuis un fichier)
 - [-] Cas de point à l'infini ( = $(x,y,0)^T$)
-- [-] Extension du code : cas surdéterminée (+ de 5 points)
-  - [-] Cas éventuel où aucune conique ne correspond => conique la + proche au sens des moindres carrés
-- [-] Fournir des exemples pour montrer que le code marche (et pour aider à l'utilisation)
+- [x] Extension du code : cas surdéterminée (+ de 5 points)
+  - [x] Cas éventuel où aucune conique ne correspond => conique la + proche au sens des moindres carrés
+- [-] Fournir des **exemples** pour montrer que le code marche (et pour aider à l'utilisation)
 - [-] Tester le projet avec plusieurs compilateur (à noter dans le rapport ???)
-- [-] Code lisible => bien séparer nos fichiers
+- [x] Code lisible => bien séparer nos fichiers
 
 ## A utiliser dans notre code ✅
 
 Voici ce qu’il serait bon de rencontrer dans votre projet :
 
-- [-] polymorphisme
-- [-] usage d’outils de la STL
+- [x] polymorphisme
+- [x] usage d’outils de la STL FOR_EACH
 - [x] exceptions pour traiter les erreurs
 - [-] asserts pour détecter et prévenir les erreurs de programmation
 - [-] espaces de nommage (namespace)
