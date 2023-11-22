@@ -9,10 +9,5 @@ Beam::Beam(Conic c1, Conic c2) {
     Conic C1(c1); //* std::cos(t);
     C1.set_rep(c1.get_rep()[0], c1.get_rep()[1], c1.get_rep()[2],
                c1.get_rep()[3], c1.get_rep()[4], c1.get_rep()[5]);
-    /*
-    Conic C2 = newCb * std::sin(t);
-    Conic Cc = C1 + C2;
-    set_Ci(i, Cc);
-    */
   }
 }
