@@ -4,7 +4,7 @@
 #include <iostream>
 
 Point::Point(const double &x0, const double &y0, const bool &fini)
-    : Geogebra_object(3) {
+    : Geogebra_object(3, 200, 0, 100) {
 
   *(this->m_rep) << x0, y0, (int)fini;
 
@@ -16,5 +16,5 @@ Point::~Point(){};
 
 void Point::push(Viewer_conic &v) const {
   std::cout << "push point...\n";
-  v.push_point((*m_rep), 0, 0, 200);
+  v.push_point((*m_rep), m_red, m_green, m_blue);
 }

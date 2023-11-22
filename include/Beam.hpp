@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Conic.hpp"
+#include "Viewer.hpp"
 #include <Eigen/Dense>
 #include <iostream>
 #include <vector>
@@ -8,9 +9,10 @@
 class Beam {
 
 private:
-  std::vector<Conic *> conics;
-  int m_approx = 30;
+  std::vector<Conic *> m_conics;
+  const unsigned int m_approx = 20;
 
 public:
   Beam(Conic c1, Conic c2);
+  std::vector<Conic *> get_conics();
 };

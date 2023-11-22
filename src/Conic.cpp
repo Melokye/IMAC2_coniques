@@ -6,7 +6,10 @@
 
 Conic::~Conic() {}
 
-Conic::Conic(const Conic &c) : Geogebra_object(6) { *(m_rep) = *(c.m_rep); };
+Conic::Conic(const Conic &c)
+    : Geogebra_object(6, c.m_red, c.m_green, c.m_blue) {
+  *(m_rep) = *(c.m_rep);
+};
 
 Type Conic::conic_type() const {
 
@@ -20,7 +23,7 @@ Type Conic::conic_type() const {
 
 void Conic::push(Viewer_conic &v) const {
   std::cout << "push conic type " << conic_type() << " ...\n";
-  v.push_conic((*m_rep), 255, 0, 100);
+  v.push_conic((*m_rep), m_red, m_green, m_blue);
 }
 
 void Conic::set_rep(double a, double b, double c, double d, double e,

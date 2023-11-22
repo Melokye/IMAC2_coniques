@@ -10,8 +10,13 @@ Viewer::Viewer(const std::vector<Geogebra_object *> &geo_obj) {
   /* ------------ ajout ------------ */
   std::for_each(geo_obj.begin(), geo_obj.end(),
                 [this](auto obj) { obj->push(m_viewer); });
+}
 
-  std::cout << "AFFICHAGE..." << std::endl;
+void Viewer::add_obj(const Geogebra_object *obj) { obj->push(m_viewer); }
+
+void Viewer::display() {
+  std::cout << "\n\n/* --------------- AFFICHAGE --------------- */\n\n"
+            << std::endl;
   m_viewer.display(); // on terminal
   m_viewer.render("output/output.html");
 }

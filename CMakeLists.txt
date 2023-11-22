@@ -40,6 +40,8 @@ add_executable(conic src/main.cpp
     src/Point.cpp include/Point.hpp
     src/Viewer.cpp include/Viewer.hpp
     include/Geogebra_object.hpp
+    src/Beam.cpp include/Beam.hpp
+    src/Parsing.cpp include/Parsing.hpp
 )
 
 # compilation options

@@ -1,18 +1,17 @@
 #pragma once
-#include "Beam.hpp"
 #include "Point.hpp"
 
 #include <Eigen/Dense>
 #include <initializer_list>
 #include <iostream>
 #include <stdexcept>
+#include <string>
 #include <vector>
 
 enum Type { cercle, ellipse, parabole, hyperbole };
-
 class Conic : public Geogebra_object {
 
-  friend Beam;
+  friend class Beam;
 
 private:
   template <class Arg>
@@ -32,7 +31,8 @@ protected:
   void set_rep(double a, double b, double c, double d, double e, double f);
 
 public:
-  template <class... Args> Conic(const Args... args) : Geogebra_object(6) {
+  template <class... Args>
+  Conic(const Args... args) : Geogebra_object(6, 255, 0, 100) {
     int num_points = sizeof...(args);
     if (num_points < 5)
       throw std::logic_error("Number of points should be even and at least 5.");

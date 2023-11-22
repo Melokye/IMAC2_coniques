@@ -11,4 +11,8 @@ private:
 public:
   Viewer(const std::vector<Geogebra_object *> &geo_obj);
   ~Viewer(){};
+  inline Viewer_conic get_View() { return m_viewer; };
+  void add_obj(const Geogebra_object *obj);
+
+  void display();
 };

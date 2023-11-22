@@ -27,10 +27,10 @@
 
 ⚠️ **View** => s'occupe d'afficher sur géogébra ⚠️ `Mélodie`
 
-- [-] Lien Entry <=> Conique ⚠️ `Mélodie`
-- [-] Au lieu d'avoir le processus dans le main ⚠️ `Mélodie`
-  - [-] Dessiner les points
-  - [-] Dessiner la conique
+- [x] Lien Entry <=> Conique ⚠️ `Mélodie`
+- [x] Au lieu d'avoir le processus dans le main ⚠️ `Mélodie`
+  - [x] Dessiner les points
+  - [x] Dessiner la conique
   - [-] Dessiner les droites (tangente)
 
 ### Semaine 2 (Deadline : Mercredi 15 novembre) :
