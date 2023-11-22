@@ -38,6 +38,8 @@ add_executable(conic src/main.cpp
     src/Directory.cpp include/Directory.hpp
     src/Conic.cpp include/Conic.hpp 
     src/Point.cpp include/Point.hpp
+    src/Viewer.cpp include/Viewer.hpp
+    include/Geogebra_object.hpp
 )
 
 # compilation options

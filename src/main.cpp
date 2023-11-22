@@ -7,6 +7,7 @@
 
 #include "Conic.hpp"
 #include "Geogebra_conics.hpp"
+#include "Viewer.hpp"
 
 int main() {
   // the viewer will open a file whose path is writen in hard (bad!!).
@@ -16,44 +17,23 @@ int main() {
   std::vector<Point> p = {Point{1, 2}, Point{2., 2}, Point{3., 2}, Point{4, 1.},
                           Point{5., 1.}};
 
-  /*
-    Conic c = Conic(Point{1, 0}, Point{sqrt(3) / 2., 1 / 2.},
-                    Point{sqrt(2) / 2., sqrt(2) / 2.},
-                    Point{-sqrt(3) / 2., 1 / 2.}, Point{0, 1}, Point{1, 2});
-  */
+  Conic c = Conic(Point{1, 0}, Point{sqrt(3) / 2., 1 / 2.},
+                  Point{sqrt(2) / 2., sqrt(2) / 2.},
+                  Point{-sqrt(3) / 2., 1 / 2.}, Point{0, 1}, Point{1, 2});
 
-  Conic c = Conic(Point{1, 2}, Point{2., 2}, Point{3., 2}, Point{4, 1.},
-                  Point{5., 1.});
+  // BONNE CONIQUE
+  Conic c2 = Conic(Point{1, 2}, Point{2., 2}, Point{3., 2}, Point{4, 1.},
+                   Point{5., 1.});
 
-  Viewer_conic viewer;
+  std::vector<Geogebra_object *> geo_obj;
 
-  // viewer options
-  viewer.set_background_color(250, 250, 255);
-  viewer.show_axis(true);
-  viewer.show_grid(false);
-  viewer.show_value(false);
-  viewer.show_label(true);
+  for (Point el : p)
+    geo_obj.push_back(new Point(el));
 
-  for (unsigned int i = 0; i < p.size(); i++) {
-    std::string name = "p " + std::to_string(i + 1);
-    viewer.push_point(
-        (Eigen::VectorXd(3) << p[i].getX(), p[i].getY(), p[i].getW())
-            .finished(),
-        name, 200, 0, 0);
-  }
+  geo_obj.push_back(new Conic(c));
+  geo_obj.push_back(new Conic(c2));
 
-  Eigen::VectorXd conic(6);
-  conic << c.getCoeff(); // coeff conique - ellipse
-  viewer.push_conic(conic, 100, 0, 200);
-
-  Eigen::VectorXd conic2(6);
-  conic2 << 10, 2, 5, 0, 40, 0; // coeff conique - ellipse
-  viewer.push_conic(conic2, 100, 0, 200);
-
-  // render
-  viewer.display();                    // on terminal
-  viewer.render("output/output.html"); // generate the output file (to open with
-                                       // your web browser)
+  Viewer v(geo_obj);
 
   // std::cout << "Type conique : " << c.conicType() << std::endl;
 

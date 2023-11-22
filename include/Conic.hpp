@@ -9,13 +9,10 @@
 
 enum Type { cercle, ellipse, parabole, hyperbole };
 
-class Conic {
+class Conic : public Geogebra_object {
 private:
   /* -------------- Membres -------------- */
-  Eigen::VectorXd coeff;
-  /*TODO: std::vector<Point> pointEquation;
-  auto add = [this]() { (this->pointEquation).push_back(); };
-  */
+
   /* ------------- Fonctions ------------- */
 
   template <class Arg>
@@ -36,7 +33,9 @@ public:
 
   /* ----- Constructeur/Destructeur ----- */
 
-  template <class... Args> Conic(const Args... args) {
+  Conic(const Conic &c) : Geogebra_object(6) { *(m_rep) = *(c.m_rep); };
+
+  template <class... Args> Conic(const Args... args) : Geogebra_object(6) {
     int numPoints = sizeof...(args);
     if (numPoints < 5)
       throw std::logic_error("Number of points should be even and at least 5.");
@@ -45,11 +44,11 @@ public:
     addMatrix(A, args...);
     Eigen::JacobiSVD<Eigen::MatrixXd> svd(A, Eigen::ComputeThinU |
                                                  Eigen::ComputeFullV);
-    coeff = svd.matrixV().rightCols(1);
+    *(m_rep) = svd.matrixV().rightCols(1);
   }
   ~Conic();
 
   /* ------------- Fonctions ------------- */
   Type conicType() const;
-  inline Eigen::VectorXd getCoeff() const { return coeff; };
+  void push(Viewer_conic &v) const override;
 };
