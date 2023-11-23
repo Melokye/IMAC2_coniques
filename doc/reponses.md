@@ -69,10 +69,6 @@ On peut utiliser 5 tangentes pour construire une conique car cela revient à tro
 
 2. Dans certains cas, une conique peut être une paire de droites. Quelle est l’équation de cette conique ? Comment la construire ?
 
-<u><b>Cas</b></u>
-
-// TODO : finir pour justifier pourquoi trois points sont alignés
-
 <u><b>Equation de la conique</b></u>
 
 l'équation d'une droite est : $ax + by + c = 0$  

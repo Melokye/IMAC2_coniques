@@ -9,28 +9,28 @@
 
 ### Semaine 1 (Deadline : Dimanche 12 novembre) :
 
-- [x] Répondre aux questions "simples"
-- [x] Réfléchir niveau classe et séparation de code
+- Répondre aux questions "simples"
+- Réfléchir niveau classe et séparation de code
 
 #### Organisation niveau programmation
 
 ⚠️**Conique** (= Coupe cone/plan) => `stocke les informations des coniques`⚠️ `Tanya`
 
-- [x] Constructeur (+ 5 points -> "...") ⚠️`Tanya`
+- Constructeur (+ 5 points -> "...") ⚠️`Tanya`
       -> conique la + proche au sens des moindres carrés
-- [x] liste de ses coefficients : A, B, C, D, E, F ⚠️
+- liste de ses coefficients : A, B, C, D, E, F ⚠️
       `Tanya`
-  - [x] Calcule coeff
-- [x] Type conique ⚠️ => TODO: meilleur AFFICHAGE
+  - Calcule coeff
+- Type conique ⚠️ => TODO: meilleur AFFICHAGE
 
 ---
 
 ⚠️ **View** => s'occupe d'afficher sur géogébra ⚠️ `Mélodie`
 
-- [x] Lien Entry <=> Conique ⚠️ `Mélodie`
-- [x] Au lieu d'avoir le processus dans le main ⚠️ `Mélodie`
-  - [x] Dessiner les points
-  - [x] Dessiner la conique
+- Lien Entry <=> Conique ⚠️ `Mélodie`
+- Au lieu d'avoir le processus dans le main ⚠️ `Mélodie`
+  - Dessiner les points
+  - Dessiner la conique
   - [-] Dessiner les droites (tangente)
 
 ### Semaine 2 (Deadline : Mercredi 15 novembre) :
@@ -100,8 +100,8 @@
 
 ### Semaine 2 (Deadline : Dimanche 19 novembre) :
 
-- [-] questions maths avancées
-- [-] Construction de conique
+- questions maths avancées
+- Construction de conique
 - [-] Exemples :
 
   - [-] cercle ($a = c$ et $b = 0$)
@@ -141,7 +141,7 @@
 
 ### Semaine 3 (Deadline : Mardi 21 novembre) :
 
-- [-] Réunion Lundi 20 (vers 16h à la fac) : Revoir les questions non terminées
+- Réunion Lundi 20 (vers 16h à la fac) : Revoir les questions non terminées
 - [-] Cas de point à l'infini
 - [-] Cas surdéterminée
 
@@ -160,22 +160,22 @@
 
 ## Questions à répondre
 
-- [-] Pourquoi peut-on résoudre ce système avec uniquement 5 points ?
-- [-] Montrez pourquoi la tangente l d’une conique C passant par le point x ∈ C s’exprime sous la forme : l = Cx
-- [-] Différence entre la distance algébrique et géométrique  
+- [x] Pourquoi peut-on résoudre ce système avec uniquement 5 points ?
+- [x] Montrez pourquoi la tangente l d’une conique C passant par le point x ∈ C s’exprime sous la forme : l = Cx
+- [x] Différence entre la distance algébrique et géométrique  
    géométrique : distance minimale entre le point et la conique  
    algébrique : d = ax² + bxy + cy² + dxw + eyw + fw²
 - [-] Explorer les propriétés des points et des droites en rapport avec les coniques
 
 ## Mathématiques avancés
 
-- [-] Comment peut-on construire une conique à partir de 5 tangentes ? (cf section 2.1)
-- [-] Affichez des coniques du faisceau C(t) et vérifiez que ces coniques passent toutes par les points d’intersection entre Ca et Cb.  
+- [x] Comment peut-on construire une conique à partir de 5 tangentes ? (cf section 2.1)
+- [x] Affichez des coniques du faisceau C(t) et vérifiez que ces coniques passent toutes par les points d’intersection entre Ca et Cb.  
    C(t) = cos(t)Ca + sin(t)Cb avec t ∈ [0, π]  
    faisceau == combinaison linéaire de 2 coniques  
    /!\ Pensez à normer les coniques Ca et Cb en divisant chacune de leur composante par leur norme respective : ‖C‖ = sqrt(a² + b² + c² + d² + e² + f²)
-- [-] Dans certains cas, une conique peut être une paire de droites. Quelle est l’équation de cette conique ? Comment la construire ?
-- [-] Il se trouve qu’une conique peut même être un point (un cercle de rayon nul). Quelle est l’équation de cette conique ?
+- [x] Dans certains cas, une conique peut être une paire de droites. Quelle est l’équation de cette conique ? Comment la construire ?
+- [x] Il se trouve qu’une conique peut même être un point (un cercle de rayon nul). Quelle est l’équation de cette conique ?
 
 # Programmation
 
@@ -206,7 +206,7 @@ Voici ce qu’il serait bon de rencontrer dans votre projet :
 - des références _non constantes_ alors qu’elles devraient l’être
 - des _passages par copies non justiﬁés_
 - des _erreurs de segmentation_
-- des _fuites de mémoires_ => utiliser valdgrind
+- des _fuites de mémoires_ => utiliser valgrind
 - des bugs
 - du **code de debug non retiré**
 - du _code mort_ (= des portions de code non utilisés par le programme)

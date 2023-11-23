@@ -34,7 +34,7 @@ public:
   Conic(const Conic &c);
 
   ~Conic();
-  Conic(){}; // TODO à retravailler ?
+  Conic(){};
   Conic& operator=(const Conic&);
 
 public:
