@@ -44,7 +44,7 @@ public:
   void add_point(Point);
 
 private:
-  template <class Arg>
+  template <class Arg> // TODO class -> typename 
   inline void add_matrix(const Arg &arg){
     m_matrix.conservativeResize(m_matrix.rows() + 1, m_matrix.cols());
     m_matrix.row(m_matrix.rows() - 1) = arg.get_matrix_equation();
