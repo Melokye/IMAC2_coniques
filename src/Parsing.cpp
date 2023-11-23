@@ -27,10 +27,11 @@ std::vector<double> string_to_coord(const std::string &data) {
   return coord;
 }
 
-// TODO liste de conique
 /// @brief extract the data to create a conic
 Conic extract_data(const std::string &filename) {
-  // TODO check si filename existe ?
+  if(!directory_or_file_exists(filename))
+    throw std::invalid_argument("file '" + filename + "' don't exist");
+
   std::string file_content = read_file(filename);
   std::vector<std::string> data = split(file_content, std::string("\n"));
   std::vector<Point> points;
@@ -39,7 +40,7 @@ Conic extract_data(const std::string &filename) {
   for (std::string convert : data) {
     std::vector<double> coord = string_to_coord(convert);
     points.push_back(
-        Point(coord.at(0), coord.at(1), coord.at(2))); // TODO peut mieux faire
+        Point(coord.at(0), coord.at(1), coord.at(2)));
   }
 
   // create conic
@@ -50,9 +51,8 @@ Conic extract_data(const std::string &filename) {
 
     for (size_t i = 5; i < points.size(); i++)
       conic.add_point(points.at(i));
+  }else{
+    throw std::length_error("must have at least 5 arg, here " + points.size());
   }
-  // TODO else pb ?
   return conic;
 }
-
-// TODO substitute : data -> file
