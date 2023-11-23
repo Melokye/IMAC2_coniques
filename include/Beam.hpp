@@ -1,9 +1,6 @@
 #pragma once
 
 #include "Conic.hpp"
-#include "Viewer.hpp"
-#include <Eigen/Dense>
-#include <iostream>
 #include <vector>
 
 class Beam {
@@ -14,5 +11,5 @@ private:
 
 public:
   Beam(Conic c1, Conic c2);
-  std::vector<Conic *> get_conics();
+  std::vector<Conic *> get_conics() const;
 };
