@@ -128,8 +128,11 @@ bool copy_text(const std::string &src, const std::string &dest) {
   return srcFile && destFile;
 }
 
-bool create_input_directory() {
-  std::string path = "../input";
+/**
+ * @brief create a directory if it doesn't exist
+ * 
+ */
+bool create_directory(std::string path) {
   if (directory_exists(path)) {
     return false;
   } else {
@@ -138,9 +141,15 @@ bool create_input_directory() {
   }
 }
 
-unsigned int len_file() { // TODO à corriger
+/**
+ * @brief count the number of file "file_n" in a directory, 
+ * n : the number of the file, starting by 0
+ * @param path name of the directory
+ * @return number of file "file_n" in the directory
+ */
+unsigned int len_file(std::string path) { // TODO à tester
   unsigned int cmpt = 0;
-  while (!directory_or_file_exists("input/file_" + std::to_string(cmpt) +
+  while (!directory_or_file_exists(path + "file_" + std::to_string(cmpt) +
                                    ".txt")) {
     cmpt++;
   }

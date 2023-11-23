@@ -1,3 +1,12 @@
+/**
+ * @file main.cpp
+ * @author Tanya FRANCOIS et Mélodie KOUY
+ * @brief generate two conic from point and beam of these two conic
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #include <Eigen/Dense>
 #include <cstddef>
 #include <iostream>
@@ -23,9 +32,7 @@ int main() {
 
   Conic c2;
 
-  std::cout << create_input_directory() << std::endl;
-
-  if(!create_input_directory()){
+  if(!create_directory("../input")){
     c2 = extract_data("../input/file_0.txt");
   }else{
     std::cout << "fichier non ouvert..." << std::endl;
@@ -33,8 +40,6 @@ int main() {
     // CONIQUE droite parallèle
     c2 = Conic(Point{1, 2}, Point{2., 2}, Point{3., 2}, Point{4, 1.},
                    Point{5., 1.});
- 
-
   }
 
   Beam b(c, c2);

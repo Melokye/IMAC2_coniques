@@ -36,8 +36,8 @@ bool copy_bin(const std::string &src, const std::string &dest);
 
 bool copy_text(const std::string &src, const std::string &dest);
 
-bool create_input_directory();
+bool create_directory(std::string path);
 
-unsigned int len_file();
+unsigned int len_file(std::string path);
 
 #endif // GA_DIRECTORY_HPP__
