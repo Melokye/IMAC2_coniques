@@ -147,9 +147,9 @@ bool create_directory(std::string path) {
  * @param path name of the directory
  * @return number of file "file_n" in the directory
  */
-unsigned int len_file(std::string path) { // TODO à tester
+unsigned int len_file(std::string path) {
   unsigned int cmpt = 0;
-  while (!directory_or_file_exists(path + "file_" + std::to_string(cmpt) +
+  while (directory_or_file_exists(path + "file_" + std::to_string(cmpt) +
                                    ".txt")) {
     cmpt++;
   }
