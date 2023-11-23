@@ -27,8 +27,6 @@ std::vector<double> string_to_coord(const std::string &data) {
   return coord;
 }
 
-// TODO à mettre dans le .h ----------------
-
 // TODO liste de conique
 /// @brief extract the data to create a conic
 Conic extract_data(const std::string &filename) {
