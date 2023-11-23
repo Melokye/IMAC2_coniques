@@ -4,6 +4,10 @@
 #include <string>
 #include <vector>
 
+// ---
+#include "Point.hpp"
+#include "Conic.hpp"
+
 std::vector<std::string> split(const std::string &data,
                                const std::string &delimiter) {
   std::vector<std::string> result;
@@ -22,9 +26,7 @@ std::vector<std::string> split(const std::string &data,
   return result;
 }
 
-// TODO à mettre dans le .h ----------------
-
-/// @brief convert the string format "x y z" into list of coord
+/// @brief convert the string format "x y z ..." into list of coord
 std::vector<double> string_to_coord(const std::string &data) {
   std::vector<double> coord;
   for(std::string c : split(data, " "))
@@ -32,25 +34,33 @@ std::vector<double> string_to_coord(const std::string &data) {
   return coord;
 }
 
+// TODO à mettre dans le .h ----------------
+
 // TODO liste de conique
 /// @brief extract the data to create a conic
 Geogebra_object extract_data(const std::string &filename) {
-  std::string data = read_file(filename);
-  std::string delimiter = " ";
-  unsigned int begin = 0;
-  Geogebra_object conic; // TODO c'est une variadique ...
-  while (data.find(delimiter) != data.npos) {
-    unsigned int end = data.find("\n");
-    std::string extracted = data.substr(begin, end);
-    std::vector convert = string_to_coord(extracted);
-    // TODO add to conic
-    begin = end;
-    data = data.substr(begin, data.size());
+  // TODO check si filename existe ?
+  std::string file_content = read_file(filename);
+  std::vector<std::string> data = split(file_content, std::string("\n"));
+  std::vector<Point> points;
+
+  // create points
+  for(std::string convert : data){
+    std::vector<double> coord = string_to_coord(convert);
+    points.push_back(Point(coord.at(0), coord.at(1), coord.at(2))); // TODO peut mieux faire
   }
 
-  // Conic(Point{1, 2}, Point{2., 2}, Point{3., 2}, Point{4, 1.},
-  // Point{5., 1.});
-  // TODO return
+  // create conic
+  Conic conic;
+  if(points.size() >= 5){
+    conic = Conic(points.at(0), points.at(1), points.at(2), points.at(3), points.at(4));
+
+    for (size_t i = 5; i < points.size(); i++)
+      conic.add_point(points.at(i));
+    
+  }
+  // TODO else pb ?
+  return conic;
 }
 
 // TODO substitute : data -> file

@@ -22,8 +22,12 @@ int main() {
                   Point{-sqrt(3) / 2., 1 / 2.}, Point{0, 1}, Point{1, 2});
 
   // CONIQUE droite parallèle
-  Conic c2 = Conic(Point{1, 2}, Point{2., 2}, Point{3., 2}, Point{4, 1.},
-                   Point{5., 1.});
+  // Conic c2 = Conic(Point{1, 2}, Point{2., 2}, Point{3., 2}, Point{4, 1.},
+  //                  Point{5., 1.});
+
+  // TODO test fichier
+  // TODO test directory aussi
+  Conic c2 = extract_data("input/file_0.txt");
 
   Beam b(c, c2);
   std::vector<Conic *> conics = b.get_conics();
@@ -44,9 +48,5 @@ int main() {
 
   // std::cout << "Type conique : " << c.conicType() << std::endl;
 
-  
-  for (double mot : string_to_coord("1 2 1")) { // TODO test
-    std::cout << mot << std::endl;
-  }
   return 0;
 }
