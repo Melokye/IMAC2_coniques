@@ -26,7 +26,7 @@ int main(){
                       Point{5., 1.}};
 
   // CONIQUE cercle
-  Conic circle = Conic(Point{1, 0}, Point{sqrt(3) / 2., 1 / 2.},
+  Conic parable = Conic(Point{1, 0}, Point{sqrt(3) / 2., 1 / 2.},
                        Point{sqrt(2) / 2., sqrt(2) / 2.},
                        Point{-sqrt(3) / 2., 1 / 2.}, Point{0, 1}, Point{1, 2});
 
@@ -40,7 +40,7 @@ int main(){
   }
 
   // Faisceau
-  Beam b(circle, parallele);
+  Beam b(parable, parallele);
 
   // Affichage
   std::vector<Conic *> conics = b.get_conics();
@@ -52,14 +52,14 @@ int main(){
   for (Conic *c : conics)
     geo_obj.push_back(new Conic(*c));
 
-  geo_obj.push_back(new Conic(circle));
+  geo_obj.push_back(new Conic(parable));
   geo_obj.push_back(new Conic(parallele));
 
   Viewer v(geo_obj);
   v.display();
 
   // Type de connique rencontré
-  std::cout << "Type conique : " << circle.conic_type() << std::endl;
+  std::cout << "Type conique : " << parable.conic_type() << std::endl;
 
   return 0;
 }
