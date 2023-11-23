@@ -25,7 +25,6 @@ endif()
 
 # add a "output" directory in the project binary directory
 file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/output)
-# TODO : set the output path
 
 # put the binary files in this directory
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)

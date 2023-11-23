@@ -44,12 +44,13 @@ void Conic::add_point(Point point){
 }
 
 Conic& Conic::operator=(const Conic &c){
-  // TODO à mettre directement dans la c
+
   if(this != &c){
     m_rep = c.m_rep;
     m_red = c.m_red;
     m_green = c.m_green;
     m_blue = c.m_blue;
+    
     m_matrix = c.m_matrix;
   }
   return *this;
