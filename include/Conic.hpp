@@ -18,8 +18,7 @@ public:
   template <class... Args>
   Conic(const Args... args) : Geogebra_object(6, 255, 0, 100) {
     int num_points = sizeof...(args);
-    if (num_points < 5)
-      throw std::logic_error("Number of points should be even and at least 5.");
+    assert(num_points >= 5 && "Number of points should be even and at least 5.");
 
     Eigen::MatrixXd A(0, 6);
     m_matrix = A;
