@@ -129,15 +129,16 @@ bool copy_text(const std::string &src, const std::string &dest) {
 }
 
 bool create_input_directory() {
-  if (directory_exists("input")) {
+  std::string path = "../input";
+  if (directory_exists(path)) {
     return false;
   } else {
-    make_directory("input");
+    make_directory(path);
     return true;
   }
 }
 
-unsigned int len_file() {
+unsigned int len_file() { // TODO à corriger
   unsigned int cmpt = 0;
   while (!directory_or_file_exists("input/file_" + std::to_string(cmpt) +
                                    ".txt")) {

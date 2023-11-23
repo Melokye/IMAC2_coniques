@@ -21,13 +21,21 @@ int main() {
                   Point{sqrt(2) / 2., sqrt(2) / 2.},
                   Point{-sqrt(3) / 2., 1 / 2.}, Point{0, 1}, Point{1, 2});
 
-  // CONIQUE droite parallèle
-  // Conic c2 = Conic(Point{1, 2}, Point{2., 2}, Point{3., 2}, Point{4, 1.},
-  //                  Point{5., 1.});
+  Conic c2;
 
-  // TODO test fichier
-  // TODO test directory aussi
-  Conic c2 = extract_data("input/file_0.txt");
+  std::cout << create_input_directory() << std::endl;
+
+  if(!create_input_directory()){
+    c2 = extract_data("../input/file_0.txt");
+  }else{
+    std::cout << "fichier non ouvert..." << std::endl;
+
+    // CONIQUE droite parallèle
+    c2 = Conic(Point{1, 2}, Point{2., 2}, Point{3., 2}, Point{4, 1.},
+                   Point{5., 1.});
+ 
+
+  }
 
   Beam b(c, c2);
   std::vector<Conic *> conics = b.get_conics();

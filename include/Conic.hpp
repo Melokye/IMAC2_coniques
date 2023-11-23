@@ -36,6 +36,7 @@ public:
   ~Conic();
   Conic(){}; // TODO à retravailler
   // TODO conic par copie
+  Conic& operator=(const Conic&);
 
 public:
   Type conic_type() const;
