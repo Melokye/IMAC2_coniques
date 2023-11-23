@@ -1,12 +1,10 @@
 #pragma once
-#include "Point.hpp"
 
 #include <Eigen/Dense>
+#include "Point.hpp"
+
 #include <initializer_list>
-#include <iostream>
 #include <stdexcept>
-#include <string>
-#include <vector>
 
 enum Type { cercle, ellipse, parabole, hyperbole };
 class Conic : public Geogebra_object {

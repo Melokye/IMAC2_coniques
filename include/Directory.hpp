@@ -15,7 +15,6 @@
 #define GA_DIRECTORY_HPP__
 
 #include <string>
-#include <vector>
 
 void make_directory(const std::string &dirName);
 
