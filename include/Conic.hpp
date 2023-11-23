@@ -52,6 +52,7 @@ private:
 
   template <class Arg>
   inline void add_matrix(Eigen::MatrixXd &m, const Arg &arg) const {
+    // TODO à modifier
     m.conservativeResize(m.rows() + 1, m.cols());
     m.row(m.rows() - 1) = arg.get_matrix_equation();
   }
