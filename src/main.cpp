@@ -26,23 +26,24 @@ int main() {
   std::vector<Point> p = {Point{1, 2}, Point{2., 2}, Point{3., 2}, Point{4, 1.},
                           Point{5., 1.}};
 
-  Conic c = Conic(Point{1, 0}, Point{sqrt(3) / 2., 1 / 2.},
+  // CONIQUE cercle
+  Conic cercle = Conic(Point{1, 0}, Point{sqrt(3) / 2., 1 / 2.},
                   Point{sqrt(2) / 2., sqrt(2) / 2.},
                   Point{-sqrt(3) / 2., 1 / 2.}, Point{0, 1}, Point{1, 2});
 
-  Conic c2;
+  Conic parallele;
 
   if(!create_directory("../input")){
-    c2 = extract_data("../input/file_0.txt");
+    parallele = extract_data("../input/file_0.txt");
   }else{
     std::cout << "fichier non ouvert..." << std::endl;
 
     // CONIQUE droite parallèle
-    c2 = Conic(Point{1, 2}, Point{2., 2}, Point{3., 2}, Point{4, 1.},
+    parallele = Conic(Point{1, 2}, Point{2., 2}, Point{3., 2}, Point{4, 1.},
                    Point{5., 1.});
   }
 
-  Beam b(c, c2);
+  Beam b(cercle, parallele);
   std::vector<Conic *> conics = b.get_conics();
   std::vector<Geogebra_object *> geo_obj;
 
@@ -52,8 +53,8 @@ int main() {
   for (Conic *el : conics)
     geo_obj.push_back(new Conic(*el));
 
-  geo_obj.push_back(new Conic(c));
-  geo_obj.push_back(new Conic(c2));
+  geo_obj.push_back(new Conic(cercle));
+  geo_obj.push_back(new Conic(parallele));
 
   Viewer v(geo_obj);
 
