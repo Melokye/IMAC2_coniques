@@ -35,3 +35,10 @@ void Conic::set_rep(double a, double b, double c, double d, double e,
   (*m_rep)[4] = e;
   (*m_rep)[5] = f;
 }
+
+void Conic::add_point(Point point){
+  add_matrix(point);
+  Eigen::JacobiSVD<Eigen::MatrixXd> svd(m_matrix, Eigen::ComputeThinU |
+                                                 Eigen::ComputeFullV);
+  *(m_rep) = svd.matrixV().rightCols(1);
+}
