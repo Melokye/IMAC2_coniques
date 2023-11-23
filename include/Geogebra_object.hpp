@@ -13,14 +13,14 @@ protected:
   unsigned int m_blue;
 
 public:
-  virtual void push([[maybe_unused]] Viewer_conic &v) const {};
   virtual ~Geogebra_object(){};
+  virtual void push([[maybe_unused]] Viewer_conic &v) const {};
 
   /* ----------- non virtual ----------- */
-  Geogebra_object(int n = 1, unsigned int red = 0, unsigned int green = 0,
-                  unsigned int blue = 0)
-      : m_rep(new Eigen::VectorXd(n)), m_red(red), m_green(green),
-        m_blue(blue){};
+  Geogebra_object(int n = 1, 
+    unsigned int red = 0, unsigned int green = 0, unsigned int blue = 0)
+    : m_rep(new Eigen::VectorXd(n)),
+      m_red(red), m_green(green), m_blue(blue){};
 
   Eigen::VectorXd get_rep() const { return *(this->m_rep); };
 
