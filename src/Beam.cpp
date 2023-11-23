@@ -23,4 +23,4 @@ Beam::Beam(Conic c1, Conic c2) {
   }
 }
 
-std::vector<Conic *> Beam::get_conics() { return m_conics; }
+std::vector<Conic *> Beam::get_conics() const { return m_conics; }
