@@ -6,7 +6,7 @@
 
 class Point : public Geogebra_object {
 private:
-  Eigen::RowVectorXd matrix_equation = Eigen::RowVectorXd(6);
+  Eigen::RowVectorXd m_matrix_equation = Eigen::RowVectorXd(6);
 
 public:
   Point(const double &x0 = 0, const double &y0 = 0, const bool &fini = 1);
@@ -18,7 +18,7 @@ public:
   /* ------------- Fonctions ------------- */
 
   inline Eigen::RowVectorXd get_matrix_equation() const {
-    return matrix_equation;
+    return m_matrix_equation;
   };
 
   void push(Viewer_conic &v) const override;

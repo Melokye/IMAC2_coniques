@@ -8,7 +8,7 @@ Point::Point(const double &x0, const double &y0, const bool &fini)
 
   *(this->m_rep) << x0, y0, (int)fini;
 
-  matrix_equation << pow((*m_rep)[0], 2), (*m_rep)[0] * (*m_rep)[1],
+  m_matrix_equation << pow((*m_rep)[0], 2), (*m_rep)[0] * (*m_rep)[1],
       pow((*m_rep)[1], 2), (*m_rep)[0] * (*m_rep)[2], (*m_rep)[1] * (*m_rep)[2],
       (*m_rep)[2] * (*m_rep)[2];
 }
