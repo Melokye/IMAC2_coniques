@@ -45,8 +45,8 @@ int main() {
   // std::cout << "Type conique : " << c.conicType() << std::endl;
 
   // TODO test split
-  // for (std::string mot : split("Bonjour ceci est un test", " ")) {
-  //   std::cout << mot << std::endl;
-  // }
+  for (std::string mot : split("Bonjour ceci est un test", " ")) {
+    std::cout << mot << std::endl;
+  }
   return 0;
 }
