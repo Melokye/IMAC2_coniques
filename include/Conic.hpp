@@ -27,12 +27,12 @@ public:
     m_matrix = A;
     add_matrix(m_matrix, args...);
     Eigen::JacobiSVD<Eigen::MatrixXd> svd(m_matrix, Eigen::ComputeThinU |
-                                                 Eigen::ComputeFullV);
+                                                        Eigen::ComputeFullV);
     *(m_rep) = svd.matrixV().rightCols(1);
   }
 
   Conic(const Conic &c);
-  
+
   ~Conic();
   Conic(){}; // TODO à retravailler
   // TODO conic par copie
@@ -44,13 +44,13 @@ public:
   void add_point(Point);
 
 private:
-  template <class Arg> // TODO class -> typename 
-  inline void add_matrix(const Arg &arg){
+  template <class Arg> // TODO class -> typename
+  inline void add_matrix(const Arg &arg) {
     m_matrix.conservativeResize(m_matrix.rows() + 1, m_matrix.cols());
     m_matrix.row(m_matrix.rows() - 1) = arg.get_matrix_equation();
   }
 
-  template <class Arg>
+  template <class Arg = Point>
   inline void add_matrix(Eigen::MatrixXd &m, const Arg &arg) const {
     // TODO à modifier
     m.conservativeResize(m.rows() + 1, m.cols());
@@ -59,7 +59,7 @@ private:
 
   template <class Arg, class... Args>
   inline void add_matrix(Eigen::MatrixXd &m, const Arg &arg,
-                  const Args &...args) const {
+                         const Args &...args) const {
     add_matrix(m, arg);
     add_matrix(m, args...);
   }
