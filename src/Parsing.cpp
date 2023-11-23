@@ -4,8 +4,6 @@
 #include <string>
 #include <vector>
 
-// TODO à mettre dans le .h ----------------
-
 std::vector<std::string> split(const std::string &data,
                                const std::string &delimiter) {
   std::vector<std::string> result;
@@ -24,10 +22,11 @@ std::vector<std::string> split(const std::string &data,
   return result;
 }
 
+// TODO à mettre dans le .h ----------------
+
 /// @brief convert the string format "x y z" into list of coord
 std::vector<double> string_to_coord(const std::string &data) {
   std::vector<double> coord;
-  // TODO à tester
   for(std::string c : split(data, " "))
      coord.push_back(stod(c));
   return coord;
